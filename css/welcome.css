@@ -30,12 +30,21 @@
   display: flex;
 }
 
-/* When #main-menu is targeted in URL, show menu and hide welcome */
-.main-menu-wrapper:target {
+/* When ANY hash is in URL (not just welcome), show menu and hide welcome */
+body:not(:has(:target)) .welcome-screen {
+  display: flex;
+}
+
+body:not(:has(:target)) .main-menu-wrapper {
+  display: none;
+}
+
+/* When there's any target (main-menu or any section), show menu */
+body:has(:target) .main-menu-wrapper {
   display: block;
 }
 
-.main-menu-wrapper:target ~ .welcome-screen {
+body:has(:target) .welcome-screen {
   display: none;
 }
 
