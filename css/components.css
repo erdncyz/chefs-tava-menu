@@ -1,0 +1,738 @@
+/* Component Styles */
+
+/* Skip to Content Link - Accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: var(--primary-color);
+  color: var(--surface);
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 9999;
+  border-radius: 0 0 var(--radius-md) 0;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Header Component - Premium Dark Theme with Rich Decorations */
+.menu-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(180deg, rgba(15, 15, 15, 0.98) 0%, rgba(26, 26, 26, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 60px rgba(212, 175, 55, 0.15);
+  padding: 2.5rem 0 2rem;
+  overflow: hidden;
+}
+
+/* Decorative steam/heat waves */
+.menu-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 120%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  animation: steam 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Decorative tava circles pattern */
+.menu-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 30%);
+  pointer-events: none;
+}
+
+@keyframes steam {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+  50% { transform: translateY(-20px) scale(1.1); opacity: 0.6; }
+}
+
+/* Side decorative elements */
+.header-decoration {
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.header-decoration-left {
+  left: -50px;
+  background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+  animation: floatLeft 6s ease-in-out infinite;
+}
+
+.header-decoration-right {
+  right: -50px;
+  background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+  animation: floatRight 6s ease-in-out infinite 3s;
+}
+
+@keyframes floatLeft {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(20px); }
+}
+
+@keyframes floatRight {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(-20px); }
+}
+
+.menu-header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo wrapper with rotating ring */
+.logo-wrapper {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.logo-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px dashed var(--accent-gold);
+  opacity: 0.3;
+  animation: rotateRing 20s linear infinite;
+}
+
+@keyframes rotateRing {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.menu-header .logo {
+  max-width: 90px;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+  border: 4px solid var(--accent-gold);
+  padding: 0.75rem;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-elevated) 100%);
+  box-shadow: 
+    0 0 40px rgba(212, 175, 55, 0.4), 
+    inset 0 0 30px rgba(212, 175, 55, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.5);
+  animation: glow 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-header .logo:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 40px rgba(212, 175, 55, 0.4), 
+      inset 0 0 30px rgba(212, 175, 55, 0.15),
+      0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+  50% { 
+    box-shadow: 
+      0 0 60px rgba(212, 175, 55, 0.6), 
+      inset 0 0 40px rgba(212, 175, 55, 0.25),
+      0 12px 30px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.menu-header .restaurant-name {
+  font-family: var(--font-family-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 
+    0 0 40px rgba(212, 175, 55, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 8px rgba(212, 175, 55, 0.3);
+  position: relative;
+  animation: titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% { 
+    text-shadow: 
+      0 0 40px rgba(212, 175, 55, 0.6),
+      0 2px 4px rgba(0, 0, 0, 0.8),
+      0 4px 8px rgba(212, 175, 55, 0.3);
+  }
+  50% { 
+    text-shadow: 
+      0 0 60px rgba(212, 175, 55, 0.8),
+      0 2px 4px rgba(0, 0, 0, 0.8),
+      0 4px 12px rgba(212, 175, 55, 0.5);
+  }
+}
+
+/* Restaurant Tagline */
+.restaurant-tagline {
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Header Divider with Icon */
+.header-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  max-width: 200px;
+}
+
+.header-divider::before,
+.header-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+}
+
+.divider-icon {
+  font-size: 1.25rem;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Category Navigation Component - Tava-Themed Pills */
+.category-nav {
+  position: sticky;
+  top: 145px;
+  z-index: 90;
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.98) 0%, rgba(26, 26, 26, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Subtle heat wave effect */
+.category-nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+  opacity: 0.5;
+  animation: slideGlow 3s ease-in-out infinite;
+}
+
+@keyframes slideGlow {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+.nav-container {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 0.75rem;
+  padding: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-gold) var(--surface);
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom scrollbar for webkit browsers */
+.nav-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.nav-container::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 2px;
+}
+
+.nav-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--accent-gold-dark) 0%, var(--accent-gold) 50%, var(--accent-gold-dark) 100%);
+  border-radius: 2px;
+}
+
+.nav-container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold-light);
+}
+
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  min-height: 44px;
+  min-width: 44px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--surface) 100%);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tava shine effect on nav items */
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-item:hover::before {
+  opacity: 1;
+  animation: navShine 1.5s ease-in-out infinite;
+}
+
+@keyframes navShine {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.8); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+.nav-item:hover {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-elevated) 100%);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-gold), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.nav-item:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.nav-item:focus {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+.nav-item:focus-visible {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3);
+}
+
+/* Menu Item Card Component - Luxury Tava-Themed Design */
+.menu-item-card {
+  display: flex;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(36, 36, 36, 0.8) 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1rem;
+  margin-bottom: var(--spacing-md);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tava shine effect */
+.menu-item-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.menu-item-card:hover::before {
+  opacity: 1;
+  animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* Steam effect on hover */
+.menu-item-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to top, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.menu-item-card:hover::after {
+  opacity: 1;
+  animation: steamRise 3s ease-in-out infinite;
+}
+
+@keyframes steamRise {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-20px); opacity: 0; }
+}
+
+.menu-item-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(212, 175, 55, 0.2);
+  border-color: var(--accent-gold);
+  background: linear-gradient(135deg, rgba(36, 36, 36, 0.95) 0%, var(--surface) 100%);
+}
+
+/* Image Wrapper - Tava Shape */
+.item-image-wrapper {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--surface) 100%);
+  position: relative;
+  border: 3px solid var(--border);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Tava rim effect */
+.item-image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent-gold-dark) 0%, var(--accent-gold) 50%, var(--accent-gold-dark) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-item-card:hover .item-image-wrapper::before {
+  opacity: 1;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.9);
+}
+
+.menu-item-card:hover .item-image {
+  transform: scale(1.15) rotate(2deg);
+  filter: brightness(1.1);
+}
+
+/* Item Content */
+.item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  flex: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.item-price {
+  font-family: var(--font-family-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Tava coin effect behind price */
+.item-price::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  border-radius: 8px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-item-card:hover .item-price::before {
+  opacity: 1;
+  animation: coinGlow 2s ease-in-out infinite;
+}
+
+@keyframes coinGlow {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.item-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Component - Elegant Tava-Themed Footer */
+.menu-footer {
+  background: linear-gradient(180deg, var(--background) 0%, var(--primary-color) 50%);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative tava pattern in footer */
+.menu-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.menu-footer::after {
+  content: '🍳🔥';
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  opacity: 0.1;
+  pointer-events: none;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Social Media Links - Tava Themed */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--surface) 100%);
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tava shine effect */
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.social-link:hover::before {
+  opacity: 1;
+  animation: socialShine 2s ease-in-out infinite;
+}
+
+@keyframes socialShine {
+  0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) rotate(180deg); }
+}
+
+.social-link:hover {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-elevated) 100%);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-gold), 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.social-link:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.social-link:focus {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.social-text {
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer Divider */
+.footer-divider {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+
+.menu-footer .powered-by {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.menu-footer .footer-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.menu-footer .footer-link:hover {
+  color: var(--accent-gold-light);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.menu-footer .footer-link:focus {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.menu-footer .footer-link:focus-visible {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3);
+}

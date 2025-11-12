@@ -1,0 +1,100 @@
+/* Layout Styles */
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Main Content */
+.menu-main {
+  min-height: 100vh;
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Menu Section Styles - Elegant Section Design */
+.menu-section {
+  padding: 3rem 1rem 2.5rem;
+  scroll-margin-top: 240px;
+  background-color: var(--background);
+  transition: background-color 0.5s ease;
+}
+
+/* Focus indicator for sections when navigated via keyboard */
+.menu-section:focus {
+  outline: 2px dashed var(--accent-gold);
+  outline-offset: -4px;
+}
+
+/* Highlight animation when section is targeted */
+.menu-section:target {
+  animation: highlight 0.8s ease;
+}
+
+@keyframes highlight {
+  0% {
+    background-color: rgba(212, 175, 55, 0.1);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Section Title - Tava Themed */
+.section-title {
+  font-family: var(--font-family-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding: 1rem 2rem;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Tava plate decoration behind title */
+.section-title::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+}
+
+/* Section Title Divider - Tava handle style */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-gold-dark) 20%, var(--accent-gold) 50%, var(--accent-gold-dark) 80%, transparent 100%);
+  border-radius: 2px;
+  margin: 0.75rem auto 0;
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Menu Items Grid Container */
+.menu-items-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chef's Tava - Dijital QR Menü">
+  <meta name="author" content="Mercury Software">
+  <title>Chef's Tava - Menü</title>
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/welcome.css">
+</head>
+<body>
+  <!-- Skip to main content link for keyboard navigation -->
+  <a href="#main-content" class="skip-to-content">Ana içeriğe atla</a>
+  
+  <!-- ============================================ -->
+  <!-- CHEF'S TAVA QR MENU - CONTENT UPDATE GUIDE -->
+  <!-- ============================================ -->
+  <!-- 
+  QUICK START GUIDE FOR UPDATING MENU CONTENT:
+  
+  1. LOGO & RESTAURANT NAME:
+     - Replace images/logo.svg with your restaurant logo
+     - Update restaurant name in the header section below
+  
+  2. CATEGORIES:
+     - Add/remove categories in the navigation section
+     - Make sure href="#category-id" matches section id
+     - Add corresponding section in main content area
+  
+  3. MENU ITEMS:
+     - Each menu item is an <article class="menu-item-card">
+     - To add new item: Copy entire article block and paste
+     - Update: image path, alt text, name, price, description
+     - Save images in images/menu-items/ folder
+  
+  4. IMAGES:
+     - Logo: images/logo.svg (or .png, .jpg)
+     - Menu items: images/menu-items/your-image.jpg
+     - Recommended size: 400x400px, under 100KB
+     - Use descriptive filenames (e.g., adana-kebap.jpg)
+  
+  5. PRICES:
+     - Keep the ₺ symbol before the number
+     - Format: ₺XX or ₺XXX
+  
+  Look for section markers (====) throughout the file for
+  specific update instructions.
+  -->
+  <!-- ============================================ -->
+  
+  <!-- ============================================ -->
+  <!-- MAIN MENU SECTION -->
+  <!-- ============================================ -->
+  <div id="main-menu" class="main-menu-wrapper">
+  
+  <!-- ============================================ -->
+  <!-- HEADER SECTION -->
+  <!-- To update: Replace logo.svg with your restaurant logo -->
+  <!-- To update: Change restaurant name in h1 tag -->
+  <!-- ============================================ -->
+  <header class="menu-header" role="banner">
+    <div class="header-decoration header-decoration-left"></div>
+    <div class="header-decoration header-decoration-right"></div>
+    <div class="container">
+      <div class="logo-wrapper">
+        <div class="logo-ring"></div>
+        <img src="images/logo.svg" alt="Chef's Tava Restaurant Logo" class="logo">
+      </div>
+      <h1 class="restaurant-name">Chef's Tava</h1>
+      <p class="restaurant-tagline">Authentic Turkish Cuisine</p>
+      <div class="header-divider">
+        <span class="divider-icon">🍳🔥</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================ -->
+  <!-- CATEGORY NAVIGATION -->
+  <!-- To update: Add/remove categories by adding/removing <a> tags -->
+  <!-- Important: href="#category-id" must match the id in the section below -->
+  <!-- ============================================ -->
+  <nav class="category-nav" role="navigation" aria-label="Menü kategorileri">
+    <div class="nav-container">
+      <a href="#appetizers" class="nav-item">Başlangıçlar</a>
+      <a href="#soups" class="nav-item">Çorbalar</a>
+      <a href="#salads" class="nav-item">Salatalar</a>
+      <a href="#main-courses" class="nav-item">Ana Yemekler</a>
+      <a href="#grills" class="nav-item">Izgara</a>
+      <a href="#pasta" class="nav-item">Makarna</a>
+      <a href="#desserts" class="nav-item">Tatlılar</a>
+      <a href="#beverages" class="nav-item">İçecekler</a>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- MAIN CONTENT - MENU SECTIONS -->
+  <!-- ============================================ -->
+  <main class="menu-main" role="main" id="main-content">
+    
+    <!-- ============================================ -->
+    <!-- APPETIZERS SECTION -->
+    <!-- To update: Change section id and title -->
+    <!-- To add items: Copy an article.menu-item-card block and paste below -->
+    <!-- ============================================ -->
+    <section id="appetizers" class="menu-section">
+      <h2 class="section-title">Başlangıçlar</h2>
+      <div class="menu-items-grid">
+        
+        <!-- START: Menu Item Cards -->
+        <!-- To update each item: -->
+        <!-- 1. Replace placeholder.jpg with your image (save in images/menu-items/) -->
+        <!-- 2. Update alt text to match item name -->
+        <!-- 3. Change item name in h3 tag -->
+        <!-- 4. Update price (keep ₺ symbol) -->
+        <!-- 5. Modify description text -->
+        
+        <!-- TEMPLATE: Copy this block to add a new menu item
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/your-image.jpg" alt="Item Name" class="item-image">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Item Name</h3>
+              <span class="item-price">₺XX</span>
+            </div>
+            <p class="item-description">Item description goes here</p>
+          </div>
+        </article>
+        -->
+        
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Humus" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Humus</h3>
+              <span class="item-price">₺65</span>
+            </div>
+            <p class="item-description">Nohut ezmesi, tahin, zeytinyağı ve baharatlarla hazırlanmış geleneksel Orta Doğu mezesi</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Sigara Böreği" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Sigara Böreği</h3>
+              <span class="item-price">₺75</span>
+            </div>
+            <p class="item-description">Beyaz peynir ve maydanozlu çıtır yufka böreği (6 adet)</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Çıtır Karides" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Çıtır Karides</h3>
+              <span class="item-price">₺145</span>
+            </div>
+            <p class="item-description">Özel soslu kızarmış karides, taze yeşillikler eşliğinde</p>
+          </div>
+        </article>
+        <!-- END: Menu Item Cards -->
+        
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SOUPS SECTION -->
+    <!-- ============================================ -->
+    <section id="soups" class="menu-section">
+      <h2 class="section-title">Çorbalar</h2>
+      <div class="menu-items-grid">
+        
+        <!-- START: Menu Item Cards -->
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Mercimek Çorbası" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Mercimek Çorbası</h3>
+              <span class="item-price">₺45</span>
+            </div>
+            <p class="item-description">Geleneksel Türk mutfağından kırmızı mercimek çorbası, limon ile servis edilir</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Ezogelin Çorbası" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Ezogelin Çorbası</h3>
+              <span class="item-price">₺45</span>
+            </div>
+            <p class="item-description">Kırmızı mercimek, bulgur ve baharatlarla hazırlanan özel çorba</p>
+          </div>
+        </article>
+        <!-- END: Menu Item Cards -->
+        
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SALADS SECTION -->
+    <!-- ============================================ -->
+    <section id="salads" class="menu-section">
+      <h2 class="section-title">Salatalar</h2>
+      <div class="menu-items-grid">
+        
+        <!-- START: Menu Item Cards -->
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Çoban Salata" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Çoban Salata</h3>
+              <span class="item-price">₺55</span>
+            </div>
+            <p class="item-description">Domates, salatalık, biber, soğan ve maydanoz ile hazırlanan taze salata</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Mevsim Salata" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Mevsim Salata</h3>
+              <span class="item-price">₺60</span>
+            </div>
+            <p class="item-description">Taze yeşillikler, mevsim sebzeleri ve özel sos ile</p>
+          </div>
+        </article>
+        <!-- END: Menu Item Cards -->
+        
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MAIN COURSES SECTION -->
+    <!-- ============================================ -->
+    <section id="main-courses" class="menu-section">
+      <h2 class="section-title">Ana Yemekler</h2>
+      <div class="menu-items-grid">
+        
+        <!-- START: Menu Item Cards -->
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Kuzu Tandır" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Kuzu Tandır</h3>
+              <span class="item-price">₺285</span>
+            </div>
+            <p class="item-description">Yavaş pişirilmiş kuzu eti, pilav ve közlenmiş sebzeler ile servis edilir</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="İskender Kebap" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">İskender Kebap</h3>
+              <span class="item-price">₺195</span>
+            </div>
+            <p class="item-description">Döner eti, pide üzerinde, tereyağı ve domates sosu ile</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Hünkar Beğendi" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Hünkar Beğendi</h3>
+              <span class="item-price">₺225</span>
+            </div>
+            <p class="item-description">Kuzu haşlama, közlenmiş patlıcan püresi üzerinde</p>
+          </div>
+        </article>
+        <!-- END: Menu Item Cards -->
+        
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- GRILLS SECTION -->
+    <!-- ============================================ -->
+    <section id="grills" class="menu-section">
+      <h2 class="section-title">Izgara</h2>
+      <div class="menu-items-grid">
+        
+        <!-- START: Menu Item Cards -->
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Adana Kebap" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Adana Kebap</h3>
+              <span class="item-price">₺165</span>
+            </div>
+            <p class="item-description">Baharatlı kıyma kebap, közlenmiş sebzeler ve pilav ile</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Kuzu Pirzola" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Kuzu Pirzola</h3>
+              <span class="item-price">₺295</span>
+            </div>
+            <p class="item-description">Izgara kuzu pirzola (6 adet), patates ve sebze garnitürü ile</p>
+          </div>
+        </article>
+        <!-- END: Menu Item Cards -->
+        
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PASTA SECTION -->
+    <!-- ============================================ -->
+    <section id="pasta" class="menu-section">
+      <h2 class="section-title">Makarna</h2>
+      <div class="menu-items-grid">
+        
+        <!-- START: Menu Item Cards -->
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Fettuccine Alfredo" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Fettuccine Alfredo</h3>
+              <span class="item-price">₺125</span>
+            </div>
+            <p class="item-description">Kremalı parmesan sosu ile hazırlanmış fettuccine makarna</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Penne Arrabbiata" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Penne Arrabbiata</h3>
+              <span class="item-price">₺115</span>
+            </div>
+            <p class="item-description">Acılı domates sosu ve taze fesleğen ile penne makarna</p>
+          </div>
+        </article>
+        <!-- END: Menu Item Cards -->
+        
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- DESSERTS SECTION -->
+    <!-- ============================================ -->
+    <section id="desserts" class="menu-section">
+      <h2 class="section-title">Tatlılar</h2>
+      <div class="menu-items-grid">
+        
+        <!-- START: Menu Item Cards -->
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Künefe" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Künefe</h3>
+              <span class="item-price">₺95</span>
+            </div>
+            <p class="item-description">Sıcak tel kadayıf arası peynir, fıstık ve şerbet ile</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Baklava" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Baklava</h3>
+              <span class="item-price">₺85</span>
+            </div>
+            <p class="item-description">Antep fıstıklı geleneksel baklava (4 dilim)</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Sütlaç" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Sütlaç</h3>
+              <span class="item-price">₺65</span>
+            </div>
+            <p class="item-description">Fırında karamelize edilmiş geleneksel sütlaç</p>
+          </div>
+        </article>
+        <!-- END: Menu Item Cards -->
+        
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BEVERAGES SECTION -->
+    <!-- ============================================ -->
+    <section id="beverages" class="menu-section">
+      <h2 class="section-title">İçecekler</h2>
+      <div class="menu-items-grid">
+        
+        <!-- START: Menu Item Cards -->
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Türk Kahvesi" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Türk Kahvesi</h3>
+              <span class="item-price">₺35</span>
+            </div>
+            <p class="item-description">Geleneksel Türk kahvesi, lokum ile servis edilir</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Çay" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Çay</h3>
+              <span class="item-price">₺15</span>
+            </div>
+            <p class="item-description">Taze demlenmiş Türk çayı</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Ayran" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Ayran</h3>
+              <span class="item-price">₺25</span>
+            </div>
+            <p class="item-description">Soğuk, köpüklü geleneksel ayran</p>
+          </div>
+        </article>
+
+        <article class="menu-item-card">
+          <div class="item-image-wrapper">
+            <img src="images/menu-items/placeholder.jpg" alt="Taze Sıkılmış Portakal Suyu" class="item-image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Taze Sıkılmış Portakal Suyu</h3>
+              <span class="item-price">₺45</span>
+            </div>
+            <p class="item-description">Günlük taze sıkılmış portakal suyu</p>
+          </div>
+        </article>
+        <!-- END: Menu Item Cards -->
+        
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- ============================================ -->
+  <!-- FOOTER SECTION -->
+  <!-- Note: Footer attribution is required -->
+  <!-- ============================================ -->
+  <footer class="menu-footer" role="contentinfo">
+    <div class="container">
+      <!-- Social Media & Location Links -->
+      <div class="footer-social">
+        <a href="https://www.instagram.com/chefstava/?igsh=MTZrMGF4YXJvNnJkZw%3D%3D#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram'da Chef's Tava">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span class="social-text">@chefstava</span>
+        </a>
+        <a href="https://maps.app.goo.gl/aoVY1wcCHLR2WOtS6" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Maps'te Chef's Tava konumu">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          <span class="social-text">Konumumuz</span>
+        </a>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <p class="powered-by">
+        Powered by 
+        <a href="https://erdinc-yilmaz.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Mercury Software web sitesini ziyaret et">
+          Mercury Software
+        </a>
+      </p>
+    </div>
+  </footer>
+  
+  </div><!-- End main-menu-wrapper -->
+  
+  <!-- ============================================ -->
+  <!-- WELCOME SPLASH SCREEN -->
+  <!-- ============================================ -->
+  <div id="welcome-screen" class="welcome-screen">
+    <div class="welcome-content">
+      <div class="welcome-logo-wrapper">
+        <div class="welcome-logo-ring"></div>
+        <div class="welcome-logo-glow"></div>
+        <img src="images/logo.svg" alt="Chef's Tava Logo" class="welcome-logo">
+      </div>
+      <h1 class="welcome-title">Chef's Tava</h1>
+      <p class="welcome-subtitle">Authentic Turkish Cuisine</p>
+      <a href="#main-menu" class="welcome-button">
+        <span class="button-text">Menüye Gidin</span>
+        <span class="button-icon">🍽️</span>
+      </a>
+      <div class="welcome-footer">
+        <p class="welcome-powered">
+          Powered by 
+          <a href="https://erdinc-yilmaz.vercel.app/" target="_blank" rel="noopener noreferrer" class="welcome-powered-link">
+            Mercury Software
+          </a>
+        </p>
+      </div>
+      <div class="welcome-decoration welcome-decoration-1"></div>
+      <div class="welcome-decoration welcome-decoration-2"></div>
+      <div class="welcome-decoration welcome-decoration-3"></div>
+    </div>
+  </div>
+</body>
+</html>
