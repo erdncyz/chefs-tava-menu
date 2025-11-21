@@ -1,593 +1,79 @@
 <!DOCTYPE html>
 <html lang="tr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chef's Tava - Dijital QR Menü">
-  <meta name="author" content="Mercury Software">
-  <title>Chef's Tava - Menü</title>
-
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/welcome.css">
-</head>
-
-<body>
-  <!-- Skip to main content link for keyboard navigation -->
-  <a href="#main-content" class="skip-to-content">Ana içeriğe atla</a>
-
-  <!-- ============================================ -->
-  <!-- CHEF'S TAVA QR MENU - CONTENT UPDATE GUIDE -->
-  <!-- ============================================ -->
-  <!-- 
-  QUICK START GUIDE FOR UPDATING MENU CONTENT:
-  
-  1. LOGO & RESTAURANT NAME:
-     - Replace images/logo.svg with your restaurant logo
-     - Update restaurant name in the header section below
-  
-  2. CATEGORIES:
-     - Add/remove categories in the navigation section
-     - Make sure href="#category-id" matches section id
-     - Add corresponding section in main content area
-  
-  3. MENU ITEMS:
-     - Each menu item is an <article class="menu-item-card">
-     - To add new item: Copy entire article block and paste
-     - Update: image path, alt text, name, price, description
-     - Save images in images/menu-items/ folder
-  
-  4. IMAGES:
-     - Logo: images/logo.svg (or .png, .jpg)
-     - Menu items: images/menu-items/your-image.jpg
-     - Recommended size: 400x400px, under 100KB
-     - Use descriptive filenames (e.g., adana-kebap.jpg)
-  
-  5. PRICES:
-     - Keep the ₺ symbol before the number
-     - Format: ₺XX or ₺XXX
-  
-  6. ANIMATIONS:
-     - Animations are automatically applied to menu items via script
-  
-  Look for section markers (====) throughout the file for
-  specific update instructions.
-  -->
-  <!-- ============================================ -->
-
-  <!-- ============================================ -->
-  <!-- MAIN MENU SECTION -->
-  <!-- ============================================ -->
-  <div id="main-menu" class="main-menu-wrapper">
-
-    <!-- ============================================ -->
-    <!-- HEADER SECTION -->
-    <!-- To update: Replace logo.svg with your restaurant logo -->
-    <!-- To update: Change restaurant name in h1 tag -->
-    <!-- ============================================ -->
-    <header class="menu-header" role="banner">
-      <div class="header-decoration header-decoration-left"></div>
-      <div class="header-decoration header-decoration-right"></div>
-      <div class="container">
-        <div class="logo-wrapper">
-          <div class="logo-ring"></div>
-          <img src="images/logo.svg" alt="Chef's Tava Restaurant Logo" class="logo">
-        </div>
-        <h1 class="restaurant-name">Chef's Tava</h1>
-        <p class="restaurant-tagline">Authentic Turkish Cuisine</p>
-        <div class="header-divider">
-          <span class="divider-icon">❖</span>
-        </div>
-      </div>
-    </header>
-
-    <!-- ============================================ -->
-    <!-- CATEGORY NAVIGATION -->
-    <!-- To update: Add/remove categories by adding/removing <a> tags -->
-    <!-- Important: href="#category-id" must match the id in the section below -->
-    <!-- ============================================ -->
-    <nav class="category-nav" role="navigation" aria-label="Menü kategorileri">
-      <div class="nav-container">
-        <a href="#main-menu"
-          onclick="setTimeout(() => document.getElementById('kavurma').scrollIntoView({behavior: 'smooth'}), 10)"
-          class="nav-item">Kavurma</a>
-        <a href="#main-menu"
-          onclick="setTimeout(() => document.getElementById('chicken').scrollIntoView({behavior: 'smooth'}), 10)"
-          class="nav-item">Tavuk</a>
-        <a href="#main-menu"
-          onclick="setTimeout(() => document.getElementById('red-meat').scrollIntoView({behavior: 'smooth'}), 10)"
-          class="nav-item">Kırmızı Et</a>
-        <a href="#main-menu"
-          onclick="setTimeout(() => document.getElementById('liver').scrollIntoView({behavior: 'smooth'}), 10)"
-          class="nav-item">Ciğer</a>
-        <a href="#main-menu"
-          onclick="setTimeout(() => document.getElementById('salads').scrollIntoView({behavior: 'smooth'}), 10)"
-          class="nav-item">Salata</a>
-        <a href="#main-menu"
-          onclick="setTimeout(() => document.getElementById('desserts').scrollIntoView({behavior: 'smooth'}), 10)"
-          class="nav-item">Tatlı</a>
-        <a href="#main-menu"
-          onclick="setTimeout(() => document.getElementById('beverages').scrollIntoView({behavior: 'smooth'}), 10)"
-          class="nav-item">İçecekler</a>
-      </div>
-    </nav>
-
-    <!-- ============================================ -->
-    <!-- MAIN CONTENT - MENU SECTIONS -->
-    <!-- ============================================ -->
-    <main class="menu-main" role="main" id="main-content">
-
-      <!-- ============================================ -->
-      <!-- CHEF'S TAVA KAVURMA SECTION -->
-      <!-- ============================================ -->
-      <section id="kavurma" class="menu-section">
-        <h2 class="section-title">Chef's Tava Kavurma</h2>
-        <div class="menu-items-grid">
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Baget Ekmek Arası Kavurma" class="item-image"
-                loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Baget Ekmek Arası Kavurma</h3>
-                <span class="item-price">₺300</span>
-              </div>
-              <p class="item-description">Julienne doğranmış dana eti, soğan, biber ve domates eşliğinde</p>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <!-- CHEF'S TAVA TAVUK SECTION -->
-      <!-- ============================================ -->
-      <section id="chicken" class="menu-section">
-        <h2 class="section-title">Chef's Tava Tavuk</h2>
-        <div class="menu-items-grid">
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Barbekü Soslu Tavuk" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Barbekü Soslu Tavuk</h3>
-                <span class="item-price">₺320</span>
-              </div>
-              <p class="item-description">Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef's Tava makarna ve
-                barbekü sos eşliğinde</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Buffalo Soslu Tavuk" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Buffalo Soslu Tavuk</h3>
-                <span class="item-price">₺320</span>
-              </div>
-              <p class="item-description">Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef's Tava makarna ve
-                buffalo sos eşliğinde</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Chilli Soslu Tavuk" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Chilli Soslu Tavuk</h3>
-                <span class="item-price">₺320</span>
-              </div>
-              <p class="item-description">Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef's Tava makarna ve
-                chilli sos eşliğinde</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Köri Soslu Tavuk" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Köri Soslu Tavuk</h3>
-                <span class="item-price">₺300</span>
-              </div>
-              <p class="item-description">Julienne doğranmış tavuk eti, Chef's Tava makarna ve köri sos eşliğinde</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Köz Tavuk" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Köz Tavuk</h3>
-                <span class="item-price">₺340</span>
-              </div>
-              <p class="item-description">Julienne doğranmış tavuk eti, köz yeşil biber, köz arpacık soğanı, köz
-                sarımsak eşliğinde</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Tereyağlı Tavuk" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Tereyağlı Tavuk</h3>
-                <span class="item-price">₺265</span>
-              </div>
-              <p class="item-description">Julienne doğranmış tavuk eti, tereyağ</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Teriyaki Soslu Tavuk" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Teriyaki Soslu Tavuk</h3>
-                <span class="item-price">₺320</span>
-              </div>
-              <p class="item-description">Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef's Tava makarna ve
-                teriyaki sos eşliğinde</p>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <!-- CHEF'S TAVA KIRMIZI ET SECTION -->
-      <!-- ============================================ -->
-      <section id="red-meat" class="menu-section">
-        <h2 class="section-title">Chef's Tava Kırmızı Et</h2>
-        <div class="menu-items-grid">
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Beğendili Tava" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Beğendili Tava</h3>
-                <span class="item-price">₺400</span>
-              </div>
-              <p class="item-description">Dana sırt eti, patlıcanlı beğendi yatağında</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Chef's Köz Tava" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Chef's Köz Tava</h3>
-                <span class="item-price">₺460</span>
-              </div>
-              <p class="item-description">Dana sırt eti, közlenmiş yeşil biber, közlenmiş arpacık soğanı, közlenmiş
-                sarımsak, közlenmiş kapya biber eşliğinde</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Sebzeli Tava" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Sebzeli Tava</h3>
-                <span class="item-price">₺420</span>
-              </div>
-              <p class="item-description">Dana sırt eti, yeşilbiber, mantar, havuç ve domates eşliğinde</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Spesiyal Tava" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Spesiyal Tava</h3>
-                <span class="item-price">₺450</span>
-              </div>
-              <p class="item-description">Dana sırt eti, yeşil biber, kapya biber, mantar, Chef Tava sos eşliğinde</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Tereyağlı Tava" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Tereyağlı Tava</h3>
-                <span class="item-price">₺380</span>
-              </div>
-              <p class="item-description">Dana sırt eti, baharatlar ve tereyağ eşliğinde</p>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <!-- CHEF'S TAVA CİĞER SECTION -->
-      <!-- ============================================ -->
-      <section id="liver" class="menu-section">
-        <h2 class="section-title">Chef's Tava Ciğer</h2>
-        <div class="menu-items-grid">
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Chef's Tava Ciğer" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Chef's Tava Ciğer</h3>
-                <span class="item-price">₺300</span>
-              </div>
-              <p class="item-description">İnce doğranmış ciğer, tereyağ, sarımsak ve baharatlar eşliğinde</p>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Mantarlı Ciğer Tava" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Mantarlı Ciğer Tava</h3>
-                <span class="item-price">₺330</span>
-              </div>
-              <p class="item-description">İnce doğranmış ciğer, mantar, tereyağ ve baharatlar eşliğinde</p>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <!-- SALADS SECTION -->
-      <!-- ============================================ -->
-      <section id="salads" class="menu-section">
-        <h2 class="section-title">Salata</h2>
-        <div class="menu-items-grid">
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Chef's Tava Salata" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Chef's Tava Salata</h3>
-                <span class="item-price">₺100</span>
-              </div>
-              <p class="item-description">Özel soslu taze mevsim salatası</p>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <!-- DESSERTS SECTION -->
-      <!-- ============================================ -->
-      <section id="desserts" class="menu-section">
-        <h2 class="section-title">Tatlı</h2>
-        <div class="menu-items-grid">
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Tahinli Kadayıf" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Tahinli Kadayıf</h3>
-                <span class="item-price">₺125</span>
-              </div>
-              <p class="item-description">Özel tahinli kadayıf tatlısı</p>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <!-- BEVERAGES SECTION -->
-      <!-- ============================================ -->
-      <section id="beverages" class="menu-section">
-        <h2 class="section-title">İçecekler</h2>
-        <div class="menu-items-grid">
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Cappy Meyve Suyu" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Cappy Meyve Suyu</h3>
-                <span class="item-price">₺65</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Coca Cola Kutu" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Coca Cola Kutu</h3>
-                <span class="item-price">₺65</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Coca Cola Şişe" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Coca Cola Şişe</h3>
-                <span class="item-price">₺65</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Fanta" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Fanta</h3>
-                <span class="item-price">₺65</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Fuse Tea" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Fuse Tea</h3>
-                <span class="item-price">₺65</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Büyük Ayran" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Büyük Ayran</h3>
-                <span class="item-price">₺35</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Küçük Ayran" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Küçük Ayran</h3>
-                <span class="item-price">₺15</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Soda" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Soda</h3>
-                <span class="item-price">₺40</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-item-card">
-            <div class="item-image-wrapper">
-              <img src="images/menu-items/placeholder.jpg" alt="Su" class="item-image" loading="lazy">
-            </div>
-            <div class="item-content">
-              <div class="item-header">
-                <h3 class="item-name">Su</h3>
-                <span class="item-price">₺20</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-    </main>
-
-  </div><!-- End main-menu-wrapper -->
-
-  <!-- ============================================ -->
-  <!-- WELCOME SPLASH SCREEN -->
-  <!-- ============================================ -->
-  <div id="welcome-screen" class="welcome-screen">
-    <div class="welcome-content">
-      <div class="welcome-logo-wrapper">
-        <div class="welcome-logo-ring"></div>
-        <div class="welcome-logo-glow"></div>
-        <img src="images/logo.svg" alt="Chef's Tava Logo" class="welcome-logo">
-      </div>
-      <h1 class="welcome-title">Chef's Tava</h1>
-      <p class="welcome-subtitle">Authentic Turkish Cuisine</p>
-      <a href="#main-menu" class="welcome-button">
-        <span class="button-text">Menüye Gidin</span>
-        <span class="button-icon">🍽️</span>
-      </a>
-    </div>
-  </div>
-
-  <script>
-    // Add animation classes to menu items
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuItems = document.querySelectorAll('.menu-item-card');
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
-            observer.unobserve(entry.target);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Chef's Tava Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Outfit"', 'sans-serif'],
+            },
+            colors: {
+              primary: '#f59e0b', // Amber 500
+              primaryDark: '#d97706', // Amber 600
+              dark: '#09090b', // Zinc 950
+              card: '#18181b', // Zinc 900
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.5s ease-out',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
           }
-        });
-      }, observerOptions);
-
-      menuItems.forEach((item, index) => {
-        // Add staggered delay
-        const delayClass = `delay-${(index % 5 + 1) * 100}`;
-        item.classList.add(delayClass);
-        observer.observe(item);
-      });
-
-      // Header scroll effect
-      const header = document.querySelector('.menu-header');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
         }
-      });
-    });
-  </script>
+      }
+    </script>
+    <style>
+      /* Custom scrollbar hiding for horizontal nav */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      body {
+        background-color: #09090b;
+        color: #f4f4f5;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .glass {
+        background: rgba(24, 24, 27, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .text-gradient {
+        background: linear-gradient(to right, #f59e0b, #fbbf24);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
-
 </html>
