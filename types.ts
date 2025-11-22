@@ -1,7 +1,7 @@
 export enum Category {
   POPULAR = 'Popüler',
   KAVURMA = 'Kavurma',
-  TAVUK = 'Tavuk Dünyası',
+  TAVUK = 'Tavuk Tavalar',
   ET = 'Kırmızı Et',
   CIGER = 'Ciğer Tava',
   SALATA = 'Salata',
@@ -17,7 +17,7 @@ export interface MenuItem {
   category: Category;
   isSpicy?: boolean;
   isVegetarian?: boolean;
-  calories?: number; 
+  calories?: number;
 }
 
 export interface ChatMessage {
