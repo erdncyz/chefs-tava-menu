@@ -20,14 +20,15 @@ const Header: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full p-6 pb-12 flex flex-col items-center text-center z-10">
         <div className="animate-fade-in-up">
           <div className="inline-flex items-center justify-center gap-2 bg-amber-500/20 border border-amber-500/30 backdrop-blur-md px-4 py-1.5 rounded-full mb-4 shadow-[0_0_20px_rgba(245,158,11,0.4)]">
-             <Flame size={14} className="text-amber-500 fill-amber-500" />
-             <span className="text-amber-400 text-xs font-bold tracking-widest uppercase">Lezzet Ateşi</span>
+            <Flame size={14} className="text-amber-500 fill-amber-500" />
+            <span className="text-amber-400 text-xs font-bold tracking-widest uppercase">Lezzet Ateşi</span>
           </div>
-          
-          <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight text-white mb-2 drop-shadow-2xl font-sans">
-            CHEF'S <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">TAVA</span>
+
+          <h1 className="text-7xl md:text-9xl mb-6 font-script transform -rotate-2 select-none">
+            <span className="text-amber-500 text-stroke-black">Chef's</span>
+            <span className="ml-4 text-white text-stroke-black">Tava</span>
           </h1>
-          
+
           <p className="text-gray-100 text-sm md:text-lg max-w-lg mx-auto font-medium tracking-wide drop-shadow-lg shadow-black">
             Usta ellerden çıkan, ateşle harmanlanan lezzetler.
           </p>

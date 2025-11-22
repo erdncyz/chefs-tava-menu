@@ -1,64 +1,77 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Chef's Tava Menu</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Outfit"', 'sans-serif'],
-            },
-            colors: {
-              primary: '#f59e0b', // Amber 500
-              primaryDark: '#d97706', // Amber 600
-              dark: '#09090b', // Zinc 950
-              card: '#18181b', // Zinc 900
-            },
-            animation: {
-              'fade-in-up': 'fadeInUp 0.5s ease-out',
-              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Chef's Tava Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lobster&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Outfit"', 'sans-serif'],
+            script: ['"Lobster"', 'cursive'],
+          },
+          colors: {
+            primary: '#f59e0b', // Amber 500
+            primaryDark: '#d97706', // Amber 600
+            dark: '#09090b', // Zinc 950
+            card: '#18181b', // Zinc 900
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.5s ease-out',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
             }
           }
         }
       }
-    </script>
-    <style>
-      /* Custom scrollbar hiding for horizontal nav */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      body {
-        background-color: #09090b;
-        color: #f4f4f5;
-        -webkit-tap-highlight-color: transparent;
-      }
-      .glass {
-        background: rgba(24, 24, 27, 0.7);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      .text-gradient {
-        background: linear-gradient(to right, #f59e0b, #fbbf24);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    </style>
+    }
+  </script>
+  <style>
+    /* Custom scrollbar hiding for horizontal nav */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    body {
+      background-color: #09090b;
+      color: #f4f4f5;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .glass {
+      background: rgba(24, 24, 27, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #f59e0b, #fbbf24);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-stroke-black {
+      -webkit-text-stroke: 2px black;
+      text-shadow: 3px 3px 0px #000;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -70,10 +83,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
