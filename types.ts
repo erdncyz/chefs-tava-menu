@@ -1,8 +1,8 @@
 export enum Category {
   POPULAR = 'Popüler',
   BURRITO = 'Burrito Çeşitleri',
-  TAVUK = 'Tavuk Tavalar',
   ET = 'Kırmızı Et',
+  TAVUK = 'Tavuk Tavalar',
   CIGER = 'Ciğer Tava',
   SALATA = 'Salata',
   TATLI = 'Tatlılar',

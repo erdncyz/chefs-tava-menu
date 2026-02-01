@@ -41,6 +41,45 @@ export const MENU_ITEMS: MenuItem[] = [
     image: tavukBurritoImg
   },
 
+  // --- KIRMIZI ET ---
+  {
+    id: 'e1',
+    name: 'Beğendili Tava',
+    description: 'Dana sırt eti, patlıcanlı beğendi yatağında.',
+    price: 450,
+    category: Category.ET,
+  },
+  {
+    id: 'e2',
+    name: 'Chef\'s Köz Tava',
+    description: 'Dana sırt eti, közlenmiş yeşil biber, közlenmiş arpacık soğanı, közlenmiş sarımsak, közlenmiş kapya biber eşliğinde.',
+    price: 475,
+    category: Category.ET,
+    image: kozTavaImg
+  },
+  {
+    id: 'e3',
+    name: 'Sebzeli Tava',
+    description: 'Dana sırt eti, yeşilbiber, mantar, havuç ve domates eşliğinde.',
+    price: 450,
+    category: Category.ET,
+  },
+  {
+    id: 'e4',
+    name: 'Spesiyal Tava',
+    description: 'Dana sırt eti, yeşil biber, kapya biber, mantar, Chef Tava sos eşliğinde.',
+    price: 475,
+    category: Category.ET,
+    image: specialImg
+  },
+  {
+    id: 'e5',
+    name: 'Tereyağlı Tava',
+    description: 'Dana sırt eti, baharatlar ve tereyağ eşliğinde.',
+    price: 450,
+    category: Category.ET,
+  },
+
   // --- TAVUK ---
   {
     id: 't1',
@@ -89,44 +128,6 @@ export const MENU_ITEMS: MenuItem[] = [
   },
 
 
-  // --- KIRMIZI ET ---
-  {
-    id: 'e1',
-    name: 'Beğendili Tava',
-    description: 'Dana sırt eti, patlıcanlı beğendi yatağında.',
-    price: 450,
-    category: Category.ET,
-  },
-  {
-    id: 'e2',
-    name: 'Chef\'s Köz Tava',
-    description: 'Dana sırt eti, közlenmiş yeşil biber, közlenmiş arpacık soğanı, közlenmiş sarımsak, közlenmiş kapya biber eşliğinde.',
-    price: 475,
-    category: Category.ET,
-    image: kozTavaImg
-  },
-  {
-    id: 'e3',
-    name: 'Sebzeli Tava',
-    description: 'Dana sırt eti, yeşilbiber, mantar, havuç ve domates eşliğinde.',
-    price: 450,
-    category: Category.ET,
-  },
-  {
-    id: 'e4',
-    name: 'Spesiyal Tava',
-    description: 'Dana sırt eti, yeşil biber, kapya biber, mantar, Chef Tava sos eşliğinde.',
-    price: 475,
-    category: Category.ET,
-    image: specialImg
-  },
-  {
-    id: 'e5',
-    name: 'Tereyağlı Tava',
-    description: 'Dana sırt eti, baharatlar ve tereyağ eşliğinde.',
-    price: 450,
-    category: Category.ET,
-  },
 
   // --- CİĞER ---
   {
