@@ -40,14 +40,6 @@ export const MENU_ITEMS: MenuItem[] = [
     category: Category.TAVUK,
   },
   {
-    id: 't2',
-    name: 'Buffalo Soslu Tavuk',
-    description: 'Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef\'s Tava patates kızartması ve buffalo sos eşliğinde.',
-    price: 350,
-    category: Category.TAVUK,
-    isSpicy: true
-  },
-  {
     id: 't3',
     name: 'Chilli Soslu Tavuk',
     description: 'Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef\'s Tava patates kızartması ve chilli sos eşliğinde.',
@@ -133,7 +125,6 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Dana sırt eti, yeşil biber, kapya biber, mantar, Chef Tava sos eşliğinde.',
     price: 475,
     category: Category.ET,
-    isSpicy: true,
     image: specialImg
   },
   {

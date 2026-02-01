@@ -24,9 +24,9 @@ const Header: React.FC = () => {
             <span className="text-amber-400 text-xs font-bold tracking-widest uppercase">Lezzet Ateşi</span>
           </div>
 
-          <h1 className="text-7xl md:text-9xl mb-6 font-script transform -rotate-2 select-none">
-            <span className="text-amber-500 text-stroke-black">Chef's</span>
-            <span className="ml-4 text-white text-stroke-black">Tava</span>
+          <h1 className="text-7xl md:text-9xl mb-6 font-script transform -rotate-2 select-none drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+            <span className="text-amber-500">Chef's</span>
+            <span className="ml-4 text-white">Tava</span>
           </h1>
 
           <p className="text-gray-100 text-sm md:text-lg max-w-lg mx-auto font-medium tracking-wide drop-shadow-lg shadow-black">

@@ -30,20 +30,26 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onClick }) => {
       className="group relative bg-[#18181b] rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-amber-500/30 shadow-md hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
     >
       {/* Image Section */}
-      <div className="w-full h-48 overflow-hidden relative">
+      <div className="w-full h-56 md:h-64 overflow-hidden relative">
         <img
           src={displayImage}
           alt={item.name}
-          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#18181b] via-transparent to-transparent opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#18181b] via-[#18181b]/20 to-transparent opacity-90"></div>
+
+        {/* Price Tag Overlay - Premium Look */}
+        <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-lg flex items-baseline gap-1 shadow-xl">
+          <span className="text-xl font-bold text-white tracking-tight">{item.price}</span>
+          <span className="text-xs text-amber-500 font-medium">TL</span>
+        </div>
       </div>
 
 
       {/* Content Section */}
-      <div className="p-6 flex flex-col flex-grow relative z-10">
-        <div className="flex justify-between items-start gap-3 mb-3">
-          <h3 className="text-xl font-bold text-white leading-snug group-hover:text-amber-500 transition-colors">
+      <div className="p-5 flex flex-col flex-grow relative z-10">
+        <div className="flex justify-between items-start gap-3 mb-2">
+          <h3 className="text-xl font-bold text-white leading-tight font-serif tracking-wide group-hover:text-amber-500 transition-colors">
             {item.name}
           </h3>
 
@@ -64,19 +70,14 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onClick }) => {
           </div>
         </div>
 
-        <p className="text-gray-400 text-sm line-clamp-3 mb-6 font-light leading-relaxed flex-grow">
+        <p className="text-gray-400 text-sm line-clamp-2 mb-4 font-light leading-relaxed flex-grow opacity-90">
           {item.description}
         </p>
 
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5 group-hover:border-amber-500/20 transition-colors">
-          {/* Price */}
-          <div className="text-2xl font-bold text-white tracking-tight">
-            {item.price} <span className="text-sm text-amber-500 font-medium">TL</span>
-          </div>
-
           {/* Action Button */}
-          <div className="flex items-center text-xs font-semibold text-gray-500 uppercase tracking-wider group-hover:text-amber-500 transition-colors gap-1">
-            İncele <ChevronRight size={14} />
+          <div className="flex items-center text-xs font-medium text-amber-500/80 uppercase tracking-widest group-hover:text-amber-500 transition-colors gap-2">
+            Detaylar <ChevronRight size={14} />
           </div>
         </div>
       </div>
