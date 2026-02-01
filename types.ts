@@ -1,5 +1,6 @@
 export enum Category {
   POPULAR = 'Popüler',
+  BURRITO = 'Burrito Çeşitleri',
   KAVURMA = 'Kavurma',
   TAVUK = 'Tavuk Tavalar',
   ET = 'Kırmızı Et',
@@ -17,6 +18,7 @@ export interface MenuItem {
   category: Category;
   isSpicy?: boolean;
   isVegetarian?: boolean;
+  image?: string;
   calories?: number;
 }
 

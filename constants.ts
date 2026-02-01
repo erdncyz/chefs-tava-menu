@@ -1,4 +1,23 @@
 import { Category, MenuItem } from './types';
+import etBurritoImg from './assets/et_buritto.jpeg';
+import tavukBurritoImg from './assets/tavuk_buritto.jpeg';
+import kozTavaImg from './assets/köz_tava.jpeg';
+import kozTavukImg from './assets/köz_tavuk.jpeg';
+import specialImg from './assets/special.jpeg';
+import teriyakiImg from './assets/teriyaki.jpeg';
+import tahinliKadayifImg from './assets/tahinli_kadayıf.jpg';
+import cappyImg from './assets/cappy_meyve_suyu.jpg';
+import cocaColaKutuImg from './assets/coca_cola_kutu.jpg';
+import cocaColaSiseImg from './assets/coca_cola_şişe.jpg';
+import fantaKutuImg from './assets/fanta_kutu.jpg';
+import fantaSiseImg from './assets/fanta_şişe.jpg';
+import spriteSiseImg from './assets/sprite_şişe.jpg';
+import spriteKutuImg from './assets/sprite_kutu.jpg';
+import fuseTeaImg from './assets/fuse_tea.jpg';
+import buyukAyranImg from './assets/büyük_ayran.jpg';
+import kucukAyranImg from './assets/küçük_ayran.jpg';
+import sodaImg from './assets/soda.jpg';
+import suImg from './assets/su.jpg';
 
 export const RESTAURANT_NAME = "Chef's Tava";
 
@@ -49,6 +68,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Julienne doğranmış tavuk eti, köz yeşil biber, köz arpacık soğanı, köz sarımsak eşliğinde.',
     price: 365,
     category: Category.TAVUK,
+    image: kozTavukImg
   },
   {
     id: 't6',
@@ -63,6 +83,25 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef\'s Tava patates kızartması ve teriyaki sos eşliğinde.',
     price: 350,
     category: Category.TAVUK,
+    image: teriyakiImg
+  },
+
+  // --- BURRITO ---
+  {
+    id: 'b1',
+    name: 'Et Burrito',
+    description: '125 gr. kıyma eti, avokado sos, Meksika fasulyesi, mısır, pirinç pilavı, iceberg marul. Patates kızartması, 6 adet soğan halkası, ketçap, mayonez ile',
+    price: 460,
+    category: Category.BURRITO,
+    image: etBurritoImg
+  },
+  {
+    id: 'b2',
+    name: 'Tavuk Burrito',
+    description: '125 gr. tavuk eti, avokado sos, Meksika fasulyesi, mısır, pirinç pilavı, iceberg marul. Patates kızartması, 6 adet soğan halkası, ketçap, mayonez ile',
+    price: 399,
+    category: Category.BURRITO,
+    image: tavukBurritoImg
   },
 
   // --- KIRMIZI ET ---
@@ -79,6 +118,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Dana sırt eti, közlenmiş yeşil biber, közlenmiş arpacık soğanı, közlenmiş sarımsak, közlenmiş kapya biber eşliğinde.',
     price: 475,
     category: Category.ET,
+    image: kozTavaImg
   },
   {
     id: 'e3',
@@ -93,7 +133,8 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Dana sırt eti, yeşil biber, kapya biber, mantar, Chef Tava sos eşliğinde.',
     price: 475,
     category: Category.ET,
-    isSpicy: true
+    isSpicy: true,
+    image: specialImg
   },
   {
     id: 'e5',
@@ -135,6 +176,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Özel tahin ve çıtır kadayıfın eşsiz uyumu.',
     price: 125,
     category: Category.TATLI,
+    image: tahinliKadayifImg
   },
 
   // --- İÇECEKLER ---
@@ -144,6 +186,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Şeftali, Vişne veya Karışık seçenekleri ile.',
     price: 70,
     category: Category.ICECEK,
+    image: cappyImg
   },
   {
     id: 'i2',
@@ -151,6 +194,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Serinletici kola.',
     price: 70,
     category: Category.ICECEK,
+    image: cocaColaKutuImg
   },
   {
     id: 'i2b',
@@ -158,6 +202,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Serinletici kola.',
     price: 70,
     category: Category.ICECEK,
+    image: cocaColaSiseImg
   },
   {
     id: 'i3',
@@ -165,6 +210,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Serinletici portakal aroması.',
     price: 70,
     category: Category.ICECEK,
+    image: fantaKutuImg
   },
   {
     id: 'i3b',
@@ -172,6 +218,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Serinletici portakal aroması.',
     price: 70,
     category: Category.ICECEK,
+    image: fantaSiseImg
   },
   {
     id: 'i3c',
@@ -179,6 +226,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Serinletici limon aroması.',
     price: 70,
     category: Category.ICECEK,
+    image: spriteSiseImg
   },
   {
     id: 'i3d',
@@ -186,6 +234,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Serinletici limon aroması.',
     price: 70,
     category: Category.ICECEK,
+    image: spriteKutuImg
   },
   {
     id: 'i4',
@@ -193,6 +242,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Soğuk çay çeşitleri.',
     price: 70,
     category: Category.ICECEK,
+    image: fuseTeaImg
   },
   {
     id: 'i5',
@@ -200,6 +250,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Bol köpüklü, ferahlatıcı.',
     price: 30,
     category: Category.ICECEK,
+    image: buyukAyranImg
   },
   {
     id: 'i5b',
@@ -207,6 +258,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Bol köpüklü, ferahlatıcı.',
     price: 15,
     category: Category.ICECEK,
+    image: kucukAyranImg
   },
   {
     id: 'i6',
@@ -214,6 +266,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Doğal maden suyu.',
     price: 30,
     category: Category.ICECEK,
+    image: sodaImg
   },
   {
     id: 'i7',
@@ -221,6 +274,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Kaynak suyu.',
     price: 25,
     category: Category.ICECEK,
+    image: suImg
   }
 ];
 

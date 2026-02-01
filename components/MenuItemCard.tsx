@@ -1,6 +1,7 @@
 import React from 'react';
 import { MenuItem } from '../types';
 import { Leaf, ChevronRight, Utensils } from 'lucide-react';
+import defaultImg from '../assets/default.jpg';
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -9,9 +10,9 @@ interface MenuItemCardProps {
 
 // Custom Chili Pepper Icon Component (New Design)
 const PepperIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
     fill="currentColor"
     className={className}
   >
@@ -21,15 +22,23 @@ const PepperIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onClick }) => {
+  const displayImage = item.image || defaultImg;
+
   return (
-    <div 
+    <div
       onClick={onClick}
       className="group relative bg-[#18181b] rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-amber-500/30 shadow-md hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
     >
-      {/* Subtle Watermark Icon */}
-      <div className="absolute -right-4 -bottom-4 text-white/[0.02] pointer-events-none group-hover:text-amber-500/[0.05] transition-colors duration-500">
-        <Utensils size={120} />
+      {/* Image Section */}
+      <div className="w-full h-48 overflow-hidden relative">
+        <img
+          src={displayImage}
+          alt={item.name}
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#18181b] via-transparent to-transparent opacity-80"></div>
       </div>
+
 
       {/* Content Section */}
       <div className="p-6 flex flex-col flex-grow relative z-10">
@@ -37,7 +46,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onClick }) => {
           <h3 className="text-xl font-bold text-white leading-snug group-hover:text-amber-500 transition-colors">
             {item.name}
           </h3>
-          
+
           {/* Badges */}
           <div className="flex gap-1.5 shrink-0 mt-0.5">
             {item.isSpicy && (
@@ -58,20 +67,20 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onClick }) => {
         <p className="text-gray-400 text-sm line-clamp-3 mb-6 font-light leading-relaxed flex-grow">
           {item.description}
         </p>
-        
-        <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5 group-hover:border-amber-500/20 transition-colors">
-           {/* Price */}
-           <div className="text-2xl font-bold text-white tracking-tight">
-             {item.price} <span className="text-sm text-amber-500 font-medium">TL</span>
-           </div>
 
-           {/* Action Button */}
-           <div className="flex items-center text-xs font-semibold text-gray-500 uppercase tracking-wider group-hover:text-amber-500 transition-colors gap-1">
-             İncele <ChevronRight size={14} />
-           </div>
+        <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5 group-hover:border-amber-500/20 transition-colors">
+          {/* Price */}
+          <div className="text-2xl font-bold text-white tracking-tight">
+            {item.price} <span className="text-sm text-amber-500 font-medium">TL</span>
+          </div>
+
+          {/* Action Button */}
+          <div className="flex items-center text-xs font-semibold text-gray-500 uppercase tracking-wider group-hover:text-amber-500 transition-colors gap-1">
+            İncele <ChevronRight size={14} />
+          </div>
         </div>
       </div>
-      
+
       {/* Bottom Gradient Line */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     </div>
