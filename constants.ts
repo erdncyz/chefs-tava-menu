@@ -22,13 +22,23 @@ import suImg from './assets/su.jpg';
 export const RESTAURANT_NAME = "Chef's Tava";
 
 export const MENU_ITEMS: MenuItem[] = [
-  // --- KAVURMA ---
+
+  // --- BURRITO ---
   {
-    id: 'k1',
-    name: 'Baget Ekmek Arası Kavurma',
-    description: 'Julienne doğranmış dana eti, soğan, biber ve domates eşliğinde.',
-    price: 340,
-    category: Category.KAVURMA,
+    id: 'b1',
+    name: 'Et Burrito',
+    description: '125 gr. kıyma eti, avokado sos, Meksika fasulyesi, mısır, pirinç pilavı, iceberg marul. Patates kızartması, 6 adet soğan halkası, ketçap, mayonez ile',
+    price: 360,
+    category: Category.BURRITO,
+    image: etBurritoImg
+  },
+  {
+    id: 'b2',
+    name: 'Tavuk Burrito',
+    description: '125 gr. tavuk eti, avokado sos, Meksika fasulyesi, mısır, pirinç pilavı, iceberg marul. Patates kızartması, 6 adet soğan halkası, ketçap, mayonez ile',
+    price: 310,
+    category: Category.BURRITO,
+    image: tavukBurritoImg
   },
 
   // --- TAVUK ---
@@ -78,23 +88,6 @@ export const MENU_ITEMS: MenuItem[] = [
     image: teriyakiImg
   },
 
-  // --- BURRITO ---
-  {
-    id: 'b1',
-    name: 'Et Burrito',
-    description: '125 gr. kıyma eti, avokado sos, Meksika fasulyesi, mısır, pirinç pilavı, iceberg marul. Patates kızartması, 6 adet soğan halkası, ketçap, mayonez ile',
-    price: 460,
-    category: Category.BURRITO,
-    image: etBurritoImg
-  },
-  {
-    id: 'b2',
-    name: 'Tavuk Burrito',
-    description: '125 gr. tavuk eti, avokado sos, Meksika fasulyesi, mısır, pirinç pilavı, iceberg marul. Patates kızartması, 6 adet soğan halkası, ketçap, mayonez ile',
-    price: 399,
-    category: Category.BURRITO,
-    image: tavukBurritoImg
-  },
 
   // --- KIRMIZI ET ---
   {
