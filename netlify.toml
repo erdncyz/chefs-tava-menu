@@ -2,33 +2,23 @@
   command = "npm run build"
   publish = "dist"
 
-# SPA routing için redirect
+# SPA routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Performans ve güvenlik header'ları
+# HTML her zaman güncel gelsin (SPA route'lar dahil)
 [[headers]]
   for = "/*"
   [headers.values]
-    # Cache kontrolü - statik dosyaları önbelleğe al
-    Cache-Control = "public, max-age=31536000, immutable"
-    # Bağlantı sorunlarını azaltmak için
-    Connection = "keep-alive"
-    # Güvenlik
+    Cache-Control = "no-cache, no-store, must-revalidate"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
 
-# HTML dosyaları için farklı cache
+# Fingerprint'li build dosyaları uzun süre cache'lensin
 [[headers]]
-  for = "/*.html"
+  for = "/assets/*"
   [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-# index.html için
-[[headers]]
-  for = "/"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
+    Cache-Control = "public, max-age=31536000, immutable"
