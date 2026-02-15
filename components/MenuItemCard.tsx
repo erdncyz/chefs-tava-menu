@@ -34,6 +34,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onClick }) => {
         <img
           src={displayImage}
           alt={item.name}
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#18181b] via-[#18181b]/20 to-transparent opacity-90"></div>

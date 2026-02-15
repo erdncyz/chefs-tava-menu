@@ -38,6 +38,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ item, onClose }) => {
           <img
             src={displayImage}
             alt={item.name}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#18181b] via-transparent to-black/40"></div>
