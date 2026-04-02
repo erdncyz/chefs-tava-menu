@@ -80,6 +80,14 @@ export const MENU_ITEMS: MenuItem[] = [
     category: Category.ET,
   },
 
+  {
+    id: 'e6',
+    name: 'Asya Usulü Chef\'s Tava Et',
+    description: 'Dana sırt eti, Asya usulü baharatlar ve domates eşliğinde.',
+    price: 500,
+    category: Category.ET,
+  },
+
   // --- TAVUK ---
   {
     id: 't1',
@@ -87,6 +95,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef\'s Tava patates kızartması ve barbekü sos eşliğinde.',
     price: 350,
     category: Category.TAVUK,
+  },
+  {
+    id: 't2',
+    name: 'Buffalo Soslu Tavuk',
+    description: 'Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef\'s Tava makarna ve buffalo sos eşliğinde.',
+    price: 350,
+    category: Category.TAVUK,
+    isSpicy: true
   },
   {
     id: 't3',
