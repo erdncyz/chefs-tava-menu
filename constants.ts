@@ -36,7 +36,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'b2',
     name: 'Tavuk Burrito',
     description: '125 gr. tavuk eti, avokado sos, Meksika fasulyesi, mısır, pirinç pilavı, iceberg marul. Patates kızartması, 6 adet soğan halkası, ketçap, mayonez ile',
-    price: 310,
+    price: 300,
     category: Category.BURRITO,
     image: tavukBurritoImg
   },
@@ -46,14 +46,14 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'e1',
     name: 'Beğendili Tava',
     description: 'Dana sırt eti, patlıcanlı beğendi yatağında.',
-    price: 450,
+    price: 525,
     category: Category.ET,
   },
   {
     id: 'e2',
     name: 'Chef\'s Köz Tava',
     description: 'Dana sırt eti, közlenmiş yeşil biber, közlenmiş arpacık soğanı, közlenmiş sarımsak, közlenmiş kapya biber eşliğinde.',
-    price: 475,
+    price: 550,
     category: Category.ET,
     image: kozTavaImg
   },
@@ -61,14 +61,14 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'e3',
     name: 'Sebzeli Tava',
     description: 'Dana sırt eti, yeşilbiber, mantar, havuç ve domates eşliğinde.',
-    price: 450,
+    price: 530,
     category: Category.ET,
   },
   {
     id: 'e4',
     name: 'Spesiyal Tava',
     description: 'Dana sırt eti, yeşil biber, kapya biber, mantar, Chef Tava sos eşliğinde.',
-    price: 475,
+    price: 540,
     category: Category.ET,
     image: specialImg
   },
@@ -76,7 +76,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'e5',
     name: 'Tereyağlı Tava',
     description: 'Dana sırt eti, baharatlar ve tereyağ eşliğinde.',
-    price: 450,
+    price: 510,
     category: Category.ET,
   },
 
@@ -107,7 +107,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 't5',
     name: 'Köz Tavuk',
     description: 'Julienne doğranmış tavuk eti, köz yeşil biber, köz arpacık soğanı, köz sarımsak eşliğinde.',
-    price: 365,
+    price: 375,
     category: Category.TAVUK,
     image: kozTavukImg
   },
@@ -134,14 +134,14 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'c1',
     name: 'Chef\'s Tava Ciğer',
     description: 'İnce doğranmış ciğer, tereyağ, sarımsak ve baharatlar eşliğinde.',
-    price: 375,
+    price: 425,
     category: Category.CIGER,
   },
   {
     id: 'c2',
     name: 'Mantarlı Ciğer Tava',
     description: 'İnce doğranmış ciğer, mantar, tereyağ ve baharatlar eşliğinde.',
-    price: 375,
+    price: 450,
     category: Category.CIGER,
   },
 
@@ -169,7 +169,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i1',
     name: 'Cappy Meyve Suyu',
     description: 'Şeftali, Vişne veya Karışık seçenekleri ile.',
-    price: 70,
+    price: 80,
     category: Category.ICECEK,
     image: cappyImg
   },
@@ -177,7 +177,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i2',
     name: 'Coca Cola Kutu',
     description: 'Serinletici kola.',
-    price: 70,
+    price: 80,
     category: Category.ICECEK,
     image: cocaColaKutuImg
   },
@@ -185,7 +185,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i2b',
     name: 'Coca Cola Şişe',
     description: 'Serinletici kola.',
-    price: 70,
+    price: 80,
     category: Category.ICECEK,
     image: cocaColaSiseImg
   },
@@ -193,7 +193,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i3',
     name: 'Fanta Kutu',
     description: 'Serinletici portakal aroması.',
-    price: 70,
+    price: 80,
     category: Category.ICECEK,
     image: fantaKutuImg
   },
@@ -201,7 +201,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i3b',
     name: 'Fanta Şişe',
     description: 'Serinletici portakal aroması.',
-    price: 70,
+    price: 80,
     category: Category.ICECEK,
     image: fantaSiseImg
   },
@@ -209,7 +209,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i3c',
     name: 'Sprite Şişe',
     description: 'Serinletici limon aroması.',
-    price: 70,
+    price: 80,
     category: Category.ICECEK,
     image: spriteSiseImg
   },
@@ -217,7 +217,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i3d',
     name: 'Sprite Kutu',
     description: 'Serinletici limon aroması.',
-    price: 70,
+    price: 80,
     category: Category.ICECEK,
     image: spriteKutuImg
   },
@@ -225,7 +225,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i4',
     name: 'Fuse Tea',
     description: 'Soğuk çay çeşitleri.',
-    price: 70,
+    price: 80,
     category: Category.ICECEK,
     image: fuseTeaImg
   },
@@ -233,7 +233,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i5',
     name: 'Büyük Ayran',
     description: 'Bol köpüklü, ferahlatıcı.',
-    price: 30,
+    price: 45,
     category: Category.ICECEK,
     image: buyukAyranImg
   },
@@ -241,7 +241,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'i5b',
     name: 'Küçük Ayran',
     description: 'Bol köpüklü, ferahlatıcı.',
-    price: 15,
+    price: 35,
     category: Category.ICECEK,
     image: kucukAyranImg
   },
