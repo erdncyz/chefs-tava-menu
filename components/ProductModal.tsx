@@ -40,15 +40,12 @@ const ProductModal: React.FC<ProductModalProps> = ({ item, onClose }) => {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-ink/80 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cocoa/40 backdrop-blur-md animate-fade-in"
     >
       <div
-        className="bg-espresso w-full max-w-lg rounded-t-[2rem] sm:rounded-[2rem] overflow-hidden shadow-[0_-20px_60px_rgba(0,0,0,0.6)] sm:shadow-2xl gold-border relative animate-scale-in flex flex-col max-h-[92vh]"
+        className="bg-ivory w-full max-w-lg rounded-[2rem] overflow-hidden shadow-[0_30px_70px_rgba(42,33,24,0.3)] gold-border relative animate-scale-in flex flex-col max-h-[92vh]"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Mobile drag handle */}
-        <div className="sm:hidden absolute top-2.5 left-1/2 -translate-x-1/2 w-11 h-1.5 rounded-full bg-white/20 z-50"></div>
-
         {/* Image Header */}
         <div className="w-full h-56 sm:h-64 relative shrink-0">
           <img
@@ -59,15 +56,15 @@ const ProductModal: React.FC<ProductModalProps> = ({ item, onClose }) => {
             fetchPriority="high"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/30 to-black/30"></div>
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-300 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-ivory via-ivory/10 to-black/15"></div>
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-400 to-transparent z-10"></div>
         </div>
 
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Kapat"
-          className="absolute top-4 right-4 z-50 p-2.5 rounded-full transition-all glass gold-border text-white hover:scale-110 hover:rotate-90"
+          className="absolute top-4 right-4 z-50 p-2.5 rounded-full transition-all bg-white/85 backdrop-blur-md gold-border text-cocoa shadow-md hover:scale-110 hover:rotate-90"
         >
           <X size={18} />
         </button>
@@ -75,58 +72,52 @@ const ProductModal: React.FC<ProductModalProps> = ({ item, onClose }) => {
         {/* Content Section */}
         <div className="p-6 sm:p-8 flex flex-col relative overflow-y-auto no-scrollbar">
           {/* Background Watermark */}
-          <div className="absolute -right-12 -top-10 text-white/[0.025] pointer-events-none">
+          <div className="absolute -right-12 -top-10 text-cocoa/[0.04] pointer-events-none">
             <ChefHat size={200} />
           </div>
 
           <div className="relative z-10">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="text-gold-200 text-[11px] font-bold tracking-[0.15em] uppercase border border-gold-500/30 px-3 py-1 rounded-full bg-gold-500/5">
+              <span className="text-gold-700 text-[11px] font-bold tracking-[0.15em] uppercase border border-gold-500/30 px-3 py-1 rounded-full bg-gold-400/10">
                 {item.category}
               </span>
-              {item.isSpicy && <span className="text-red-300 text-[11px] font-bold flex items-center gap-1 bg-red-500/10 border border-red-500/20 px-2.5 py-1 rounded-full"><PepperIcon className="w-3 h-3 text-red-300" /> Acılı</span>}
-              {item.isVegetarian && <span className="text-emerald-300 text-[11px] font-bold flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full"><Leaf size={12} className="fill-emerald-300" /> Vejetaryen</span>}
+              {item.isSpicy && <span className="text-red-600 text-[11px] font-bold flex items-center gap-1 bg-red-500/10 border border-red-500/20 px-2.5 py-1 rounded-full"><PepperIcon className="w-3 h-3 text-red-600" /> Acılı</span>}
+              {item.isVegetarian && <span className="text-emerald-700 text-[11px] font-bold flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full"><Leaf size={12} className="fill-emerald-700" /> Vejetaryen</span>}
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight font-display">{item.name}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-cocoa mb-4 leading-tight font-display">{item.name}</h2>
 
-            <div className="h-px w-24 bg-gradient-to-r from-gold-400 to-transparent mb-6"></div>
+            <div className="h-px w-24 bg-gradient-to-r from-gold-500 to-transparent mb-6"></div>
 
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 font-light">
+            <p className="text-cocoa/70 text-base sm:text-lg leading-relaxed mb-8 font-light">
               {item.description}
             </p>
 
             {/* Info Grid */}
             <div className="grid grid-cols-3 gap-3 mb-8">
-              <div className="glass rounded-2xl p-3 text-center border border-white/5">
-                <PepperIcon className="w-5 h-5 text-gold-400 mx-auto mb-2" />
-                <div className="text-[10px] text-gray-500 uppercase tracking-wide">Lezzet</div>
-                <div className="text-white font-semibold text-sm">{item.isSpicy ? 'Baharatlı' : 'Klasik'}</div>
+              <div className="bg-sand rounded-2xl p-3 text-center border border-cocoa/5">
+                <PepperIcon className="w-5 h-5 text-gold-600 mx-auto mb-2" />
+                <div className="text-[10px] text-cocoa/45 uppercase tracking-wide">Lezzet</div>
+                <div className="text-cocoa font-semibold text-sm">{item.isSpicy ? 'Baharatlı' : 'Klasik'}</div>
               </div>
-              <div className="glass rounded-2xl p-3 text-center border border-white/5">
-                <Clock size={20} className="text-sky-300 mx-auto mb-2" />
-                <div className="text-[10px] text-gray-500 uppercase tracking-wide">Hazırlık</div>
-                <div className="text-white font-semibold text-sm">15-20 dk</div>
+              <div className="bg-sand rounded-2xl p-3 text-center border border-cocoa/5">
+                <Clock size={20} className="text-sky-600 mx-auto mb-2" />
+                <div className="text-[10px] text-cocoa/45 uppercase tracking-wide">Hazırlık</div>
+                <div className="text-cocoa font-semibold text-sm">15-20 dk</div>
               </div>
-              <div className="glass rounded-2xl p-3 text-center border border-white/5">
-                <Utensils size={20} className="text-emerald-300 mx-auto mb-2" />
-                <div className="text-[10px] text-gray-500 uppercase tracking-wide">Porsiyon</div>
-                <div className="text-white font-semibold text-sm">1 Kişi</div>
+              <div className="bg-sand rounded-2xl p-3 text-center border border-cocoa/5">
+                <Utensils size={20} className="text-emerald-600 mx-auto mb-2" />
+                <div className="text-[10px] text-cocoa/45 uppercase tracking-wide">Porsiyon</div>
+                <div className="text-cocoa font-semibold text-sm">1 Kişi</div>
               </div>
             </div>
 
             {/* Footer Action */}
-            <div className="flex items-center justify-between gap-4 pt-6 border-t border-white/10">
+            <div className="flex items-center pt-6 border-t border-cocoa/10">
               <div className="flex flex-col">
-                <span className="text-gray-500 text-[11px] uppercase tracking-wider font-semibold">Fiyat</span>
+                <span className="text-cocoa/45 text-[11px] uppercase tracking-wider font-semibold">Fiyat</span>
                 <span className="text-3xl font-bold text-gold-gradient">{item.price} TL</span>
               </div>
-              <button
-                onClick={onClose}
-                className="bg-gradient-to-r from-gold-300 to-gold-500 hover:from-gold-200 hover:to-gold-400 text-ink font-bold py-3.5 px-8 rounded-2xl shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 transform hover:-translate-y-0.5 transition-all active:scale-95"
-              >
-                Harika
-              </button>
             </div>
           </div>
         </div>

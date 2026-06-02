@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a0a0c" />
+  <meta name="theme-color" content="#f7f2e9" />
   <title>Chef's Tava · Premium Menü</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +34,10 @@
               800: '#82421c',
               900: '#6e381b',
             },
+            cream: '#f7f2e9',
+            ivory: '#fdfbf6',
+            sand: '#efe7d8',
+            cocoa: '#2a2118',
             ink: '#0a0a0c',
             espresso: '#121013',
             char: '#1a181c',
@@ -85,8 +89,8 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: #0a0a0c;
-      color: #f4f1ec;
+      background-color: #f7f2e9;
+      color: #2a2118;
       -webkit-tap-highlight-color: transparent;
       overflow-x: hidden;
     }
@@ -98,12 +102,13 @@
       inset: 0;
       z-index: 1;
       pointer-events: none;
-      opacity: 0.045;
+      opacity: 0.04;
+      mix-blend-mode: multiply;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
     .text-gold-gradient {
-      background: linear-gradient(110deg, #f2d690 0%, #e5a93a 45%, #f9ecc9 60%, #d98e23 100%);
+      background: linear-gradient(110deg, #bf6f1b 0%, #d98e23 45%, #9e5219 60%, #bf6f1b 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
@@ -111,7 +116,7 @@
     }
 
     .shimmer-text {
-      background: linear-gradient(110deg, #bf6f1b 20%, #f9ecc9 40%, #f2d690 50%, #f9ecc9 60%, #bf6f1b 80%);
+      background: linear-gradient(110deg, #9e5219 20%, #e5a93a 40%, #d98e23 50%, #e5a93a 60%, #9e5219 80%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
@@ -120,10 +125,10 @@
     }
 
     .glass {
-      background: rgba(26, 24, 28, 0.55);
-      backdrop-filter: blur(16px) saturate(140%);
-      -webkit-backdrop-filter: blur(16px) saturate(140%);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(253, 251, 246, 0.65);
+      backdrop-filter: blur(16px) saturate(130%);
+      -webkit-backdrop-filter: blur(16px) saturate(130%);
+      border: 1px solid rgba(42, 33, 24, 0.07);
     }
 
     .gold-border {
@@ -135,17 +140,18 @@
       inset: 0;
       border-radius: inherit;
       padding: 1px;
-      background: linear-gradient(140deg, rgba(242,214,144,0.6), rgba(255,255,255,0.04) 40%, rgba(217,142,35,0.4));
+      background: linear-gradient(140deg, rgba(217,142,35,0.5), rgba(42,33,24,0.05) 40%, rgba(191,111,27,0.35));
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       pointer-events: none;
     }
 
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #0a0a0c; }
-    ::-webkit-scrollbar-thumb { background: #3a3340; border-radius: 8px; }
-    ::-webkit-scrollbar-thumb:hover { background: #d98e23; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(42, 33, 24, 0.18); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(217, 142, 35, 0.6); background-clip: padding-box; }
+    html { scrollbar-width: thin; scrollbar-color: rgba(42,33,24,0.18) transparent; }
 
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
