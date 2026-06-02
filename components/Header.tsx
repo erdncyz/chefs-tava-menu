@@ -9,7 +9,7 @@ const Header: React.FC = () => {
         <img
           src="https://png.pngtree.com/thumb_back/fw800/background/20251108/pngtree-chef-cooking-stir-fry-with-flames-erupting-from-a-wok-in-image_20242845.webp"
           alt="Chef's Tava ateş üzerinde wok"
-          className="w-full h-full object-cover scale-110 animate-[float_18s_ease-in-out_infinite]"
+          className="w-full h-full object-cover scale-110 md:animate-[float_18s_ease-in-out_infinite]"
         />
         {/* Layered cinematic overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-cocoa/30 via-cocoa/35 to-cream"></div>
@@ -19,8 +19,8 @@ const Header: React.FC = () => {
       </div>
 
       {/* Aurora glows */}
-      <div className="absolute top-1/4 right-0 w-[420px] h-[420px] bg-gold-400/25 rounded-full blur-[130px] animate-aurora pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[360px] h-[360px] bg-gold-500/20 rounded-full blur-[120px] animate-aurora pointer-events-none" style={{ animationDelay: '4s' }}></div>
+      <div className="hidden md:block absolute top-1/4 right-0 w-[420px] h-[420px] bg-gold-400/25 rounded-full blur-[130px] animate-aurora pointer-events-none"></div>
+      <div className="hidden md:block absolute bottom-0 left-0 w-[360px] h-[360px] bg-gold-500/20 rounded-full blur-[120px] animate-aurora pointer-events-none" style={{ animationDelay: '4s' }}></div>
 
       {/* Top bar */}
       <div className="absolute top-0 left-0 w-full z-20 px-6 pt-6">

@@ -24,8 +24,8 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-cream pb-20 selection:bg-gold-300 selection:text-cocoa relative">
       {/* Premium ambient background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-gold-400/[0.12] rounded-full blur-[140px] animate-aurora"></div>
-        <div className="absolute bottom-[10%] left-[-10%] w-[420px] h-[420px] bg-gold-500/[0.1] rounded-full blur-[130px] animate-aurora" style={{ animationDelay: '6s' }}></div>
+        <div className="hidden md:block absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-gold-400/[0.12] rounded-full blur-[140px] animate-aurora"></div>
+        <div className="hidden md:block absolute bottom-[10%] left-[-10%] w-[420px] h-[420px] bg-gold-500/[0.1] rounded-full blur-[130px] animate-aurora" style={{ animationDelay: '6s' }}></div>
       </div>
 
       <div className="relative z-10">
@@ -41,14 +41,14 @@ const App: React.FC = () => {
 
         <main className="max-w-6xl mx-auto px-4 md:px-6 pt-12">
           {/* Section Title */}
-          <div className="flex items-end justify-between mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-8">
             <div>
               <span className="text-gold-600/80 text-[11px] font-semibold tracking-[0.3em] uppercase">Menü</span>
               <h2 className="text-3xl md:text-5xl font-bold text-cocoa tracking-tight font-display mt-1">
                 {activeCategory === 'ALL' ? 'Tüm Lezzetler' : activeCategory}
               </h2>
             </div>
-            <span className="text-gold-600/70 text-sm font-mono shrink-0 pb-1">{filteredItems.length} ürün</span>
+            <span className="text-gold-600/70 text-sm font-mono shrink-0 sm:pb-1">{filteredItems.length} ürün</span>
           </div>
 
           {/* Grid */}
@@ -57,7 +57,7 @@ const App: React.FC = () => {
               {filteredItems.map((item, idx) => (
                 <div
                   key={item.id}
-                  className="animate-fade-in-up"
+                  className="md:animate-fade-in-up"
                   style={{ animationDelay: `${Math.min(idx * 60, 600)}ms` }}
                 >
                   <MenuItemCard

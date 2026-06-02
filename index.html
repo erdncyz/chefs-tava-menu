@@ -156,11 +156,18 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
+
+    @media (max-width: 768px) {
+      .grain::before { display: none; }
+      .animate-aurora, .animate-fade-in-up { animation: none !important; }
+      .shimmer-text { animation: none !important; background-position: center; }
+      .glass { backdrop-filter: none; -webkit-backdrop-filter: none; }
+    }
   </style>
 
 </head>
 
-<body class="grain">
+<body>
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
