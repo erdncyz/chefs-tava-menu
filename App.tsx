@@ -5,7 +5,7 @@ import MenuItemCard from './components/MenuItemCard';
 import ProductModal from './components/ProductModal';
 import { MENU_ITEMS, POPULAR_ITEMS } from './constants';
 import { Category, MenuItem } from './types';
-import { Search, UtensilsCrossed, ExternalLink } from 'lucide-react';
+import { Search, UtensilsCrossed, ExternalLink, X } from 'lucide-react';
 
 const App: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category | 'ALL'>('ALL');
@@ -36,21 +36,21 @@ const App: React.FC = () => {
   }, [activeCategory, searchTerm]);
 
   return (
-    <div className="min-h-screen bg-[#09090b] pb-32 selection:bg-amber-500 selection:text-black relative">
-      {/* Premium Background FX */}
+    <div className="min-h-screen bg-ink pb-20 selection:bg-gold-400 selection:text-ink relative">
+      {/* Premium ambient background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[120px] mix-blend-screen"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-600/5 rounded-full blur-[100px] mix-blend-screen"></div>
+        <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-gold-500/[0.06] rounded-full blur-[140px] animate-aurora"></div>
+        <div className="absolute bottom-[10%] left-[-10%] w-[420px] h-[420px] bg-gold-700/[0.07] rounded-full blur-[130px] animate-aurora" style={{ animationDelay: '6s' }}></div>
       </div>
 
       <div className="relative z-10">
         <Header />
 
-        {/* Search Bar Container - Floating Glass */}
-        <div className="px-4 -mt-7 relative z-30 mb-8">
+        {/* Floating Glass Search Bar */}
+        <div className="px-4 -mt-10 relative z-30 mb-10">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-1.5 flex items-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] ring-1 ring-white/5 group hover:ring-amber-500/30 transition-all duration-500">
-              <div className="p-3 text-gray-400 group-hover:text-amber-500 transition-colors">
+            <div className="glass gold-border rounded-2xl p-1.5 flex items-center shadow-[0_12px_40px_rgba(0,0,0,0.5)] group focus-within:shadow-[0_12px_50px_rgba(217,142,35,0.2)] transition-all duration-500">
+              <div className="p-3 text-gray-400 group-focus-within:text-gold-300 transition-colors">
                 <Search size={22} />
               </div>
               <input
@@ -58,8 +58,17 @@ const App: React.FC = () => {
                 placeholder="Lezzet ara..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-transparent text-white px-2 py-2 focus:outline-none placeholder-gray-500 font-light text-lg tracking-wide"
+                className="w-full bg-transparent text-white px-1 py-2.5 focus:outline-none placeholder-gray-500 font-light text-lg tracking-wide"
               />
+              {searchTerm && (
+                <button
+                  onClick={() => setSearchTerm('')}
+                  className="p-2 mr-1 text-gray-500 hover:text-white transition-colors"
+                  aria-label="Aramayı temizle"
+                >
+                  <X size={18} />
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -69,20 +78,27 @@ const App: React.FC = () => {
           onSelectCategory={setActiveCategory}
         />
 
-        <main className="max-w-7xl mx-auto px-4 pt-8">
+        <main className="max-w-6xl mx-auto px-4 md:px-6 pt-10">
           {/* Section Title */}
-          <div className="flex items-baseline justify-between mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-              {activeCategory === 'ALL' ? 'Tüm Lezzetler' : activeCategory}
-            </h2>
-            <span className="text-amber-500/60 text-sm font-mono">{filteredItems.length} Ürün</span>
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <span className="text-gold-400/70 text-[11px] font-semibold tracking-[0.3em] uppercase">Menü</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight font-display mt-1">
+                {activeCategory === 'ALL' ? 'Tüm Lezzetler' : activeCategory}
+              </h2>
+            </div>
+            <span className="text-gold-300/60 text-sm font-mono shrink-0 pb-1">{filteredItems.length} ürün</span>
           </div>
 
           {/* Grid */}
           {filteredItems.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-              {filteredItems.map((item) => (
-                <div key={item.id} className="animate-fade-in-up">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-7">
+              {filteredItems.map((item, idx) => (
+                <div
+                  key={item.id}
+                  className="animate-fade-in-up"
+                  style={{ animationDelay: `${Math.min(idx * 60, 600)}ms` }}
+                >
                   <MenuItemCard
                     item={item}
                     onClick={() => setSelectedItem(item)}
@@ -92,11 +108,16 @@ const App: React.FC = () => {
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center py-32 text-gray-600">
-              <div className="bg-white/5 p-6 rounded-full mb-4">
-                <UtensilsCrossed size={48} className="opacity-50" />
+              <div className="glass gold-border p-6 rounded-3xl mb-5">
+                <UtensilsCrossed size={48} className="text-gold-400/40" />
               </div>
-              <p className="text-lg">Aradığınız kriterlere uygun lezzet bulunamadı.</p>
-              <button onClick={() => { setSearchTerm(''); setActiveCategory('ALL') }} className="mt-4 text-amber-500 hover:underline">Filtreleri Temizle</button>
+              <p className="text-lg text-gray-400">Aradığınız kriterlere uygun lezzet bulunamadı.</p>
+              <button
+                onClick={() => { setSearchTerm(''); setActiveCategory('ALL'); }}
+                className="mt-5 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 text-ink font-semibold text-sm hover:-translate-y-0.5 transition-transform"
+              >
+                Filtreleri Temizle
+              </button>
             </div>
           )}
         </main>
@@ -106,20 +127,20 @@ const App: React.FC = () => {
           onClose={() => setSelectedItem(null)}
         />
 
-        <footer className="text-center text-gray-600 py-12 text-sm border-t border-white/5 mt-12 bg-[#0c0c0e]">
+        <footer className="text-center py-16 mt-16 border-t border-white/5 relative">
           <div className="max-w-md mx-auto px-4">
-            <h4 className="text-white font-bold text-lg mb-2">Chef's Tava</h4>
-            <p className="mb-4 text-gray-500">En iyi malzemelerle, en lezzetli anlar.</p>
-            <p className="mb-6">&copy; {new Date().getFullYear()} Tüm hakları saklıdır.</p>
+            <h4 className="font-display italic text-3xl mb-2 text-gold-gradient">Chef's Tava</h4>
+            <p className="mb-1 text-gray-500 font-light tracking-wide">En iyi malzemelerle, en lezzetli anlar.</p>
+            <p className="mb-7 text-gray-600 text-sm">&copy; {new Date().getFullYear()} Tüm hakları saklıdır.</p>
 
             <a
               href="https://erdincyilmaz.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:border-amber-500/50 hover:bg-amber-500/10 transition-all duration-300 group shadow-lg"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass gold-border hover:-translate-y-0.5 transition-all duration-300 group shadow-lg"
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 font-bold tracking-wide text-sm">Powered by Erdinç Yılmaz</span>
-              <ExternalLink size={14} className="text-amber-500 group-hover:-translate-y-0.5 transition-transform" />
+              <span className="text-gold-gradient font-bold tracking-wide text-sm">Powered by Erdinç Yılmaz</span>
+              <ExternalLink size={14} className="text-gold-300 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
         </footer>

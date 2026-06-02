@@ -3,10 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Chef's Tava Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0c" />
+  <title>Chef's Tava · Premium Menü</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lobster&display=swap"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap"
     rel="stylesheet">
   <script>
     tailwind.config = {
@@ -14,68 +18,143 @@
         extend: {
           fontFamily: {
             sans: ['"Outfit"', 'sans-serif'],
-            script: ['"Lobster"', 'cursive'],
+            display: ['"Playfair Display"', 'serif'],
+            script: ['"Cormorant Garamond"', 'serif'],
           },
           colors: {
-            primary: '#f59e0b', // Amber 500
-            primaryDark: '#d97706', // Amber 600
-            dark: '#09090b', // Zinc 950
-            card: '#18181b', // Zinc 900
+            gold: {
+              50: '#fdf8ed',
+              100: '#f9ecc9',
+              200: '#f2d690',
+              300: '#ebbf5c',
+              400: '#e5a93a',
+              500: '#d98e23',
+              600: '#bf6f1b',
+              700: '#9e5219',
+              800: '#82421c',
+              900: '#6e381b',
+            },
+            ink: '#0a0a0c',
+            espresso: '#121013',
+            char: '#1a181c',
           },
           animation: {
-            'fade-in-up': 'fadeInUp 0.5s ease-out',
-            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'fade-in-up': 'fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both',
+            'fade-in': 'fadeIn 0.8s ease-out both',
+            'scale-in': 'scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both',
+            'float': 'float 6s ease-in-out infinite',
+            'shimmer': 'shimmer 3s linear infinite',
+            'aurora': 'aurora 18s ease-in-out infinite alternate',
+            'spin-slow': 'spin 16s linear infinite',
           },
           keyframes: {
             fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '0%': { opacity: '0', transform: 'translateY(28px)' },
               '100%': { opacity: '1', transform: 'translateY(0)' },
-            }
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            scaleIn: {
+              '0%': { opacity: '0', transform: 'scale(0.94)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% center' },
+              '100%': { backgroundPosition: '200% center' },
+            },
+            aurora: {
+              '0%': { transform: 'translate(0, 0) scale(1)' },
+              '50%': { transform: 'translate(40px, -30px) scale(1.15)' },
+              '100%': { transform: 'translate(-30px, 20px) scale(1.05)' },
+            },
           }
         }
       }
     }
   </script>
   <style>
-    /* Custom scrollbar hiding for horizontal nav */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      background-color: #09090b;
-      color: #f4f4f5;
+      background-color: #0a0a0c;
+      color: #f4f1ec;
       -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
     }
 
-    .glass {
-      background: rgba(24, 24, 27, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Premium fine grain texture overlay */
+    .grain::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    .text-gradient {
-      background: linear-gradient(to right, #f59e0b, #fbbf24);
+    .text-gold-gradient {
+      background: linear-gradient(110deg, #f2d690 0%, #e5a93a 45%, #f9ecc9 60%, #d98e23 100%);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .text-stroke-black {
-      -webkit-text-stroke: 2px black;
-      text-shadow: 3px 3px 0px #000;
+    .shimmer-text {
+      background: linear-gradient(110deg, #bf6f1b 20%, #f9ecc9 40%, #f2d690 50%, #f9ecc9 60%, #bf6f1b 80%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s linear infinite;
+    }
+
+    .glass {
+      background: rgba(26, 24, 28, 0.55);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .gold-border {
+      position: relative;
+    }
+    .gold-border::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(140deg, rgba(242,214,144,0.6), rgba(255,255,255,0.04) 40%, rgba(217,142,35,0.4));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0c; }
+    ::-webkit-scrollbar-thumb { background: #3a3340; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: #d98e23; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
     }
   </style>
 
 </head>
 
-<body>
+<body class="grain">
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
