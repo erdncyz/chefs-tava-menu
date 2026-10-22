@@ -76,7 +76,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onClick }) => {
 
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-cocoa/8 group-hover:border-gold-500/25 transition-colors">
           <span className="text-[11px] font-semibold text-cocoa/45 uppercase tracking-[0.2em] group-hover:text-gold-700 transition-colors">
-            Detaylar
+            {item.calories ? `${item.calories} kcal` : 'Detaylar'}
           </span>
           <div className="w-8 h-8 rounded-full bg-sand flex items-center justify-center text-gold-600 group-hover:bg-gradient-to-br group-hover:from-gold-400 group-hover:to-gold-600 group-hover:text-white transition-all duration-300 group-hover:rotate-45">
             <ArrowUpRight size={16} />

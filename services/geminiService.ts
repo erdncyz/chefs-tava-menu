@@ -13,13 +13,13 @@ Eğer müşteri menüde olmayan bir şey isterse, menüdeki en yakın alternatif
 Fiyat bilgisi sorulursa menüden bakıp söyle.
 
 ÖNERİ MANTIĞI:
-- Acı sevenlere "Buffalo Soslu Tavuk" veya "Chilli Soslu Tavuk" veya "Spesiyal Tava" öner.
+- Acı sevenlere "Sriccha (Acı) Soslu Tavuk", "Sweet Chilli Soslu Tavuk" veya "Meksika (Acı) Soslu Wrap" öner.
 - Klasik sevenlere "Tereyağlı Tava" veya "Köz Tavuk" öner.
-- Ekmek arası sevenlere "Baget Ekmek Arası Kavurma" öner.
-- Tatlı soranlara "Tahinli Kadayıf"ımızı mutlaka anlat.
+- Ekmek arası sevenlere wrap çeşitlerini öner.
+- Tatlı soranlara menüde tatlı olmadığını söyle ve içecek ya da Chef's Tava Salata öner.
 
 MENÜ VERİSİ:
-${JSON.stringify(MENU_ITEMS.map(item => ({ name: item.name, description: item.description, price: item.price, category: item.category, isSpicy: item.isSpicy })))}
+${JSON.stringify(MENU_ITEMS.map(item => ({ name: item.name, description: item.description, price: item.price, calories: item.calories, category: item.category, isSpicy: item.isSpicy })))}
 
 Sadece Türkçe konuş.
 `;

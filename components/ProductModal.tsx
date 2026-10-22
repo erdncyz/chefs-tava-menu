@@ -102,8 +102,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ item, onClose }) => {
               </div>
               <div className="bg-sand rounded-2xl p-3 text-center border border-cocoa/5">
                 <Clock size={20} className="text-sky-600 mx-auto mb-2" />
-                <div className="text-[10px] text-cocoa/45 uppercase tracking-wide">Hazırlık</div>
-                <div className="text-cocoa font-semibold text-sm">15-20 dk</div>
+                <div className="text-[10px] text-cocoa/45 uppercase tracking-wide">{item.calories ? 'Kalori' : 'Hazırlık'}</div>
+                <div className="text-cocoa font-semibold text-sm">{item.calories ? `${item.calories} kcal` : '15-20 dk'}</div>
               </div>
               <div className="bg-sand rounded-2xl p-3 text-center border border-cocoa/5">
                 <Utensils size={20} className="text-emerald-600 mx-auto mb-2" />

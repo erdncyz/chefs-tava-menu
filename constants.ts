@@ -5,7 +5,6 @@ import kozTavaImg from './assets/koz_tava.jpeg';
 import kozTavukImg from './assets/koz_tavuk.jpeg';
 import specialImg from './assets/special.jpeg';
 import teriyakiImg from './assets/teriyaki.jpeg';
-import tahinliKadayifImg from './assets/tahinli_kadayif.jpg';
 import cappyImg from './assets/cappy_meyve_suyu.jpg';
 import cocaColaKutuImg from './assets/coca_cola_kutu.jpg';
 import cocaColaSiseImg from './assets/coca_cola_sise.jpg';
@@ -15,268 +14,513 @@ import spriteSiseImg from './assets/sprite_sise.jpg';
 import spriteKutuImg from './assets/sprite_kutu.jpg';
 import fuseTeaImg from './assets/fuse_tea.jpg';
 import buyukAyranImg from './assets/buyuk_ayran.jpg';
-import kucukAyranImg from './assets/kucuk_ayran.jpg';
 import sodaImg from './assets/soda.jpg';
 import suImg from './assets/su.jpg';
 
 export const RESTAURANT_NAME = "Chef's Tava";
 
 export const MENU_ITEMS: MenuItem[] = [
-
-  // --- BURRITO ---
+  // --- TAVUK MENÜLERİ ---
   {
-    id: 'b1',
-    name: 'Et Burrito',
-    description: '125 gr. kıyma eti, avokado sos, Meksika fasulyesi, mısır, pirinç pilavı, iceberg marul. Patates kızartması, 6 adet soğan halkası, ketçap, mayonez ile',
-    price: 360,
-    category: Category.BURRITO,
-    image: etBurritoImg
+    id: 't1',
+    name: 'Köz Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, közlenmiş yeşil biber, közlenmiş kapya biber, közlenmiş arpacık soğanı, közlenmiş sarımsak ve Chef\'s Tava makarna.',
+    price: 395,
+    calories: 517,
+    category: Category.TAVUK,
+    image: kozTavukImg,
   },
   {
-    id: 'b2',
-    name: 'Tavuk Burrito',
-    description: '125 gr. tavuk eti, avokado sos, Meksika fasulyesi, mısır, pirinç pilavı, iceberg marul. Patates kızartması, 6 adet soğan halkası, ketçap, mayonez ile',
-    price: 300,
-    category: Category.BURRITO,
-    image: tavukBurritoImg
+    id: 't2',
+    name: 'Barbekü Soslu Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, yeşil biber, kapya biber ve Chef\'s Tava makarna.',
+    price: 375,
+    calories: 540,
+    category: Category.TAVUK,
+  },
+  {
+    id: 't3',
+    name: 'Sweet Chilli Soslu Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, yeşil biber, kapya biber ve Chef\'s Tava makarna.',
+    price: 375,
+    calories: 545,
+    category: Category.TAVUK,
+    isSpicy: true,
+  },
+  {
+    id: 't4',
+    name: 'Köri Soslu Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, yeşil biber, kapya biber ve Chef\'s Tava makarna.',
+    price: 385,
+    calories: 574,
+    category: Category.TAVUK,
+  },
+  {
+    id: 't5',
+    name: 'Teriyaki Soslu Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, yeşil biber, kapya biber ve Chef\'s Tava makarna.',
+    price: 375,
+    calories: 512,
+    category: Category.TAVUK,
+    image: teriyakiImg,
+  },
+  {
+    id: 't6',
+    name: 'Cajun Soslu Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, soğan ve Chef\'s Tava makarna.',
+    price: 385,
+    calories: 568,
+    category: Category.TAVUK,
+  },
+  {
+    id: 't7',
+    name: 'Hardal Soslu Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, yeşil biber, kapya biber ve Chef\'s Tava makarna.',
+    price: 375,
+    calories: 513,
+    category: Category.TAVUK,
+  },
+  {
+    id: 't8',
+    name: 'Sriccha (Acı) Soslu Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, yeşil biber, kapya biber ve Chef\'s Tava makarna.',
+    price: 375,
+    calories: 489,
+    category: Category.TAVUK,
+    isSpicy: true,
+  },
+  {
+    id: 't9',
+    name: 'Cafe de Paris Soslu Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, yeşil biber, kapya biber ve Chef\'s Tava makarna.',
+    price: 385,
+    calories: 505,
+    category: Category.TAVUK,
+  },
+  {
+    id: 't10',
+    name: 'Kremalı Mantarlı Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar ve Chef\'s Tava makarna.',
+    price: 385,
+    calories: 535,
+    category: Category.TAVUK,
+  },
+  {
+    id: 't11',
+    name: 'Limonlu Körili Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, yeşil biber, kapya biber ve Chef\'s Tava makarna.',
+    price: 385,
+    calories: 550,
+    category: Category.TAVUK,
+  },
+  {
+    id: 't12',
+    name: 'Kekikli Tavuk',
+    description: '180 g julienne doğranmış tavuk eti, mantar, kekik ve Chef\'s Tava makarna.',
+    price: 385,
+    calories: 535,
+    category: Category.TAVUK,
+  },
+  {
+    id: 't13',
+    name: 'Tavuk Güveç',
+    description: '180 g julienne doğranmış tavuk eti, mantar, yeşil biber, kapya biber, domates sos ve kaşar peyniri.',
+    price: 395,
+    category: Category.TAVUK,
   },
 
   // --- KIRMIZI ET ---
   {
     id: 'e1',
-    name: 'Beğendili Tava',
-    description: 'Dana sırt eti, patlıcanlı beğendi yatağında.',
-    price: 525,
+    name: 'Chef\'s Köz Tava',
+    description: '180 g bonfile, közlenmiş yeşil biber, közlenmiş arpacık soğanı, közlenmiş sarımsak, közlenmiş kapya biber, patates püresi ve sebze mix.',
+    price: 750,
+    calories: 456,
     category: Category.ET,
+    image: kozTavaImg,
   },
   {
     id: 'e2',
-    name: 'Chef\'s Köz Tava',
-    description: 'Dana sırt eti, közlenmiş yeşil biber, közlenmiş arpacık soğanı, közlenmiş sarımsak, közlenmiş kapya biber eşliğinde.',
-    price: 550,
+    name: 'Beğendili Tava',
+    description: '200 g bonfile, patlıcanlı yoğurt ve sebze mix.',
+    price: 725,
+    calories: 413,
     category: Category.ET,
-    image: kozTavaImg
   },
   {
     id: 'e3',
-    name: 'Sebzeli Tava',
-    description: 'Dana sırt eti, yeşilbiber, mantar, havuç ve domates eşliğinde.',
-    price: 530,
+    name: 'Spesiyal Tava',
+    description: '180 g bonfile, yeşil biber, kapya biber, mantar, demi glace sos, patates püresi ve sebze mix.',
+    price: 750,
+    calories: 498,
     category: Category.ET,
+    image: specialImg,
   },
   {
     id: 'e4',
-    name: 'Spesiyal Tava',
-    description: 'Dana sırt eti, yeşil biber, kapya biber, mantar, Chef Tava sos eşliğinde.',
-    price: 540,
+    name: 'Tereyağlı Tava',
+    description: '200 g bonfile, patates püresi ve sebze mix.',
+    price: 700,
+    calories: 474,
     category: Category.ET,
-    image: specialImg
   },
   {
     id: 'e5',
-    name: 'Tereyağlı Tava',
-    description: 'Dana sırt eti, baharatlar ve tereyağ eşliğinde.',
-    price: 510,
+    name: 'Mantar Soslu Tava',
+    description: '180 g bonfile, kremalı mantar sos, patates püresi ve sebze mix.',
+    price: 750,
+    calories: 518,
     category: Category.ET,
   },
-
   {
     id: 'e6',
-    name: 'Asya Usulü Chef\'s Tava Et',
-    description: 'Dana sırt eti, Asya usulü baharatlar ve domates eşliğinde.',
-    price: 500,
+    name: 'Vişneli Tava',
+    description: '180 g bonfile, vişne sos, yeşil biber, kapya biber, mantar, vişne parçaları, patates püresi ve sebze mix.',
+    price: 750,
+    calories: 469,
     category: Category.ET,
   },
-
-  // --- TAVUK ---
   {
-    id: 't1',
-    name: 'Barbekü Soslu Tavuk',
-    description: 'Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef\'s Tava patates kızartması ve barbekü sos eşliğinde.',
-    price: 350,
-    category: Category.TAVUK,
+    id: 'e7',
+    name: 'Osmanlı Tava',
+    description: '180 g bonfile, badem, kuru kayısı, kuru üzüm, bal, patates püresi ve sebze mix.',
+    price: 770,
+    calories: 491,
+    category: Category.ET,
   },
   {
-    id: 't2',
-    name: 'Buffalo Soslu Tavuk',
-    description: 'Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef\'s Tava makarna ve buffalo sos eşliğinde.',
-    price: 350,
-    category: Category.TAVUK,
-    isSpicy: true
+    id: 'e8',
+    name: 'Güveç Tava',
+    description: '180 g bonfile, yeşil biber, kapya biber, mantar, domates sos ve kaşar peyniri.',
+    price: 750,
+    calories: 517,
+    category: Category.ET,
   },
-  {
-    id: 't3',
-    name: 'Chilli Soslu Tavuk',
-    description: 'Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef\'s Tava patates kızartması ve chilli sos eşliğinde.',
-    price: 350,
-    category: Category.TAVUK,
-    isSpicy: true
-  },
-  {
-    id: 't4',
-    name: 'Köri Soslu Tavuk',
-    description: 'Julienne doğranmış tavuk eti, Chef\'s Tava patates kızartması ve köri sos eşliğinde.',
-    price: 330,
-    category: Category.TAVUK,
-  },
-  {
-    id: 't5',
-    name: 'Köz Tavuk',
-    description: 'Julienne doğranmış tavuk eti, köz yeşil biber, köz arpacık soğanı, köz sarımsak eşliğinde.',
-    price: 375,
-    category: Category.TAVUK,
-    image: kozTavukImg
-  },
-  {
-    id: 't6',
-    name: 'Tereyağlı Tavuk',
-    description: 'Julienne doğranmış tavuk eti, tereyağ.',
-    price: 325,
-    category: Category.TAVUK,
-  },
-  {
-    id: 't7',
-    name: 'Teriyaki Soslu Tavuk',
-    description: 'Julienne doğranmış tavuk eti, mantar, yeşil biber, Chef\'s Tava patates kızartması ve teriyaki sos eşliğinde.',
-    price: 350,
-    category: Category.TAVUK,
-    image: teriyakiImg
-  },
-
-
 
   // --- CİĞER ---
   {
     id: 'c1',
     name: 'Chef\'s Tava Ciğer',
-    description: 'İnce doğranmış ciğer, tereyağ, sarımsak ve baharatlar eşliğinde.',
-    price: 425,
+    description: '180 g ince doğranmış ciğer, tereyağ, közlenmiş sarımsak, sumaklı soğan ve sebze mix.',
+    price: 495,
+    calories: 395,
     category: Category.CIGER,
   },
   {
     id: 'c2',
     name: 'Mantarlı Ciğer Tava',
-    description: 'İnce doğranmış ciğer, mantar, tereyağ ve baharatlar eşliğinde.',
-    price: 450,
+    description: '180 g ince doğranmış ciğer, mantar, tereyağ, sumaklı soğan ve sebze mix.',
+    price: 525,
+    calories: 405,
     category: Category.CIGER,
   },
 
-  // --- SALATA ---
+  // --- ASYA TAVA ---
   {
-    id: 's1',
-    name: 'Chef\'s Tava Salata',
-    description: 'Mevsim yeşillikleri ve özel sos ile.',
-    price: 125,
-    category: Category.SALATA,
+    id: 'a1',
+    name: 'Asya Usulü Et Tava',
+    description: '180 g bonfile, yeşil biber, kapya biber, mantar, fasulye filizi, Worchester sos, tatlı ekşi sos, susam, patates püresi ve sebze mix.',
+    price: 725,
+    calories: 453,
+    category: Category.ASYA,
+  },
+  {
+    id: 'a2',
+    name: 'Asya Usulü Tavuk Tava',
+    description: '180 g julienne doğranmış tavuk, yeşil biber, kapya biber, mantar, fasulye filizi, Worchester sos, tatlı ekşi sos, susam, patates püresi ve sebze mix.',
+    price: 395,
+    calories: 308,
+    category: Category.ASYA,
   },
 
-  // --- TATLI ---
+  // --- WRAP ---
   {
-    id: 'ta1',
-    name: 'Tahinli Kadayıf',
-    description: 'Özel tahin ve çıtır kadayıfın eşsiz uyumu.',
+    id: 'w1',
+    name: 'Köz Wrap',
+    description: '30 cm tortilla, tavuk parçaları, közlenmiş yeşil biber, közlenmiş kapya biber, soğan ve marul. 100 g patates kızartması ile.',
+    price: 250,
+    calories: 674,
+    category: Category.WRAP,
+  },
+  {
+    id: 'w2',
+    name: 'Barbekü Wrap',
+    description: '30 cm tortilla, barbekü soslu tavuk parçaları, soğan ve marul. 100 g patates kızartması ile.',
+    price: 250,
+    calories: 681,
+    category: Category.WRAP,
+  },
+  {
+    id: 'w3',
+    name: 'Kekiklim Wrap',
+    description: '30 cm tortilla, kremalı mantarlı soslu tavuk parçaları, kekik, soğan ve marul. 100 g patates kızartması ile.',
+    price: 250,
+    calories: 695,
+    category: Category.WRAP,
+  },
+  {
+    id: 'w4',
+    name: 'Köri Soslu Tavuk Wrap',
+    description: '30 cm tortilla, köri soslu tavuk parçaları, soğan ve marul. 100 g patates kızartması ile.',
+    price: 250,
+    calories: 690,
+    category: Category.WRAP,
+  },
+  {
+    id: 'w5',
+    name: 'Sweet Chilli Soslu Wrap',
+    description: '30 cm tortilla, chilli soslu tavuk parçaları, marul ve soğan. 100 g patates kızartması ile.',
+    price: 250,
+    calories: 685,
+    category: Category.WRAP,
+    isSpicy: true,
+  },
+  {
+    id: 'w6',
+    name: 'Meksika (Acı) Soslu Wrap',
+    description: '30 cm tortilla, Meksika soslu tavuk parçaları, marul, soğan ve jalapeno. 100 g patates kızartması ile.',
+    price: 250,
+    calories: 676,
+    category: Category.WRAP,
+    isSpicy: true,
+  },
+  {
+    id: 'w7',
+    name: 'Ciğer Wrap',
+    description: '30 cm tortilla, baharatlı ciğer parçaları, marul ve soğan. 100 g patates kızartması ile.',
+    price: 250,
+    calories: 640,
+    category: Category.WRAP,
+  },
+
+  // --- BURRITO ---
+  {
+    id: 'b1',
+    name: 'Tavuk Burrito',
+    description: '150 g tavuk parçaları, soğan, Chef\'s Tava sos, Meksika fasulyesi, mısır, baharatlar, marul ve Meksika sos.',
+    price: 375,
+    calories: 495,
+    category: Category.BURRITO,
+    image: tavukBurritoImg,
+  },
+  {
+    id: 'b2',
+    name: 'Et Burrito',
+    description: '150 g bonfile parçaları, soğan, turşu, Chef\'s Tava sos, Meksika fasulyesi, mısır, baharatlar, marul ve Meksika sos.',
+    price: 550,
+    calories: 595,
+    category: Category.BURRITO,
+    image: etBurritoImg,
+  },
+
+  // --- MENÜLER ---
+  {
+    id: 'm1',
+    name: 'Wrap Menü',
+    description: 'Seçeceğiniz 1 adet wrap, 3 adet soğan halkası, 100 g patates kızartması ve şişe içecek. Wrap menüleri 130 g tavuk içermektedir.',
+    price: 350,
+    category: Category.MENU,
+  },
+  {
+    id: 'm2',
+    name: 'Tavuk Burrito Menü',
+    description: '1 adet tavuk burrito, 3 adet soğan halkası, 100 g patates kızartması ve şişe içecek.',
+    price: 475,
+    category: Category.MENU,
+  },
+
+  // --- ALTERNATİFLER ---
+  {
+    id: 'alt1',
+    name: 'Patates Kızartması (100 g)',
+    description: '100 g patates kızartması.',
+    price: 85,
+    calories: 285,
+    category: Category.ALTERNATIF,
+  },
+  {
+    id: 'alt2',
+    name: 'Patates Kızartması (200 g)',
+    description: '200 g patates kızartması.',
+    price: 150,
+    calories: 570,
+    category: Category.ALTERNATIF,
+  },
+  {
+    id: 'alt3',
+    name: 'Soğan Halkası (3 adet)',
+    description: '3 adet soğan halkası.',
+    price: 60,
+    calories: 57,
+    category: Category.ALTERNATIF,
+  },
+  {
+    id: 'alt4',
+    name: 'Soğan Halkası (6 adet)',
+    description: '6 adet soğan halkası.',
+    price: 100,
+    calories: 114,
+    category: Category.ALTERNATIF,
+  },
+  {
+    id: 'alt5',
+    name: 'Chef\'s Tava Salata',
+    description: 'Chef\'s Tava salata.',
     price: 125,
-    category: Category.TATLI,
-    image: tahinliKadayifImg
+    calories: 45,
+    category: Category.ALTERNATIF,
+  },
+  {
+    id: 'alt6',
+    name: 'Kremalı Pestolu Penne Makarna',
+    description: '200 g kremalı pestolu penne makarna.',
+    price: 150,
+    calories: 515,
+    category: Category.ALTERNATIF,
+  },
+  {
+    id: 'alt7',
+    name: 'Tam Buğday Makarna',
+    description: '200 g tam buğday makarna.',
+    price: 150,
+    calories: 475,
+    category: Category.ALTERNATIF,
+  },
+  {
+    id: 'alt8',
+    name: 'Glutensiz Makarna',
+    description: '200 g glutensiz makarna.',
+    price: 150,
+    calories: 495,
+    category: Category.ALTERNATIF,
   },
 
   // --- İÇECEKLER ---
   {
     id: 'i1',
-    name: 'Cappy Meyve Suyu',
-    description: 'Şeftali, Vişne veya Karışık seçenekleri ile.',
-    price: 80,
+    name: 'Sarıyer Kutu Portakal',
+    description: 'Sarıyer portakal, kutu.',
+    price: 75,
     category: Category.ICECEK,
-    image: cappyImg
   },
   {
     id: 'i2',
-    name: 'Coca Cola Kutu',
-    description: 'Serinletici kola.',
-    price: 80,
+    name: 'Sarıyer Kutu Kola',
+    description: 'Sarıyer kola, kutu.',
+    price: 75,
     category: Category.ICECEK,
-    image: cocaColaKutuImg
-  },
-  {
-    id: 'i2b',
-    name: 'Coca Cola Şişe',
-    description: 'Serinletici kola.',
-    price: 80,
-    category: Category.ICECEK,
-    image: cocaColaSiseImg
   },
   {
     id: 'i3',
-    name: 'Fanta Kutu',
-    description: 'Serinletici portakal aroması.',
-    price: 80,
+    name: 'Cappy Meyve Suyu',
+    description: 'Karışık, kayısı, şeftali, portakal veya vişne.',
+    price: 85,
     category: Category.ICECEK,
-    image: fantaKutuImg
-  },
-  {
-    id: 'i3b',
-    name: 'Fanta Şişe',
-    description: 'Serinletici portakal aroması.',
-    price: 80,
-    category: Category.ICECEK,
-    image: fantaSiseImg
-  },
-  {
-    id: 'i3c',
-    name: 'Sprite Şişe',
-    description: 'Serinletici limon aroması.',
-    price: 80,
-    category: Category.ICECEK,
-    image: spriteSiseImg
-  },
-  {
-    id: 'i3d',
-    name: 'Sprite Kutu',
-    description: 'Serinletici limon aroması.',
-    price: 80,
-    category: Category.ICECEK,
-    image: spriteKutuImg
+    image: cappyImg,
   },
   {
     id: 'i4',
-    name: 'Fuse Tea',
-    description: 'Soğuk çay çeşitleri.',
-    price: 80,
+    name: 'Coca Cola Kutu',
+    description: 'Kutu kola.',
+    price: 95,
     category: Category.ICECEK,
-    image: fuseTeaImg
+    image: cocaColaKutuImg,
   },
   {
     id: 'i5',
-    name: 'Büyük Ayran',
-    description: 'Bol köpüklü, ferahlatıcı.',
-    price: 45,
+    name: 'Coca Cola Şişe',
+    description: 'Şişe kola.',
+    price: 85,
     category: Category.ICECEK,
-    image: buyukAyranImg
-  },
-  {
-    id: 'i5b',
-    name: 'Küçük Ayran',
-    description: 'Bol köpüklü, ferahlatıcı.',
-    price: 35,
-    category: Category.ICECEK,
-    image: kucukAyranImg
+    image: cocaColaSiseImg,
   },
   {
     id: 'i6',
-    name: 'Soda',
-    description: 'Doğal maden suyu.',
-    price: 30,
+    name: 'Coca Cola Zero Kutu',
+    description: 'Kutu Coca Cola Zero.',
+    price: 95,
     category: Category.ICECEK,
-    image: sodaImg
+    image: cocaColaKutuImg,
   },
   {
     id: 'i7',
+    name: 'Coca Cola Zero Şişe',
+    description: 'Şişe Coca Cola Zero.',
+    price: 85,
+    category: Category.ICECEK,
+    image: cocaColaSiseImg,
+  },
+  {
+    id: 'i8',
+    name: 'Fanta Şişe',
+    description: 'Şişe portakallı gazoz.',
+    price: 85,
+    category: Category.ICECEK,
+    image: fantaSiseImg,
+  },
+  {
+    id: 'i9',
+    name: 'Fanta Kutu',
+    description: 'Kutu portakallı gazoz.',
+    price: 95,
+    category: Category.ICECEK,
+    image: fantaKutuImg,
+  },
+  {
+    id: 'i10',
+    name: 'Sprite Şişe',
+    description: 'Şişe limonlu gazoz.',
+    price: 85,
+    category: Category.ICECEK,
+    image: spriteSiseImg,
+  },
+  {
+    id: 'i11',
+    name: 'Sprite Kutu',
+    description: 'Kutu limonlu gazoz.',
+    price: 95,
+    category: Category.ICECEK,
+    image: spriteKutuImg,
+  },
+  {
+    id: 'i12',
+    name: 'Fuse Tea',
+    description: 'Mango-ananas, kavun-çilek, limon, şeftali veya karpuz.',
+    price: 85,
+    category: Category.ICECEK,
+    image: fuseTeaImg,
+  },
+  {
+    id: 'i13',
+    name: 'Büyük Ayran',
+    description: '170 ml ayran.',
+    price: 50,
+    category: Category.ICECEK,
+    image: buyukAyranImg,
+  },
+  {
+    id: 'i14',
+    name: 'Soda',
+    description: 'Sade, limon, elma, karpuz-çilek veya mango-ananas.',
+    price: 50,
+    category: Category.ICECEK,
+    image: sodaImg,
+  },
+  {
+    id: 'i15',
+    name: 'Şalgam',
+    description: 'Acısız şalgam.',
+    price: 50,
+    category: Category.ICECEK,
+  },
+  {
+    id: 'i16',
     name: 'Su',
-    description: 'Kaynak suyu.',
+    description: 'Akdağ, 500 ml.',
     price: 25,
     category: Category.ICECEK,
-    image: suImg
-  }
+    image: suImg,
+  },
 ];
 
-export const POPULAR_ITEMS = ['e2', 't1', 'ta1', 'k1', 'e4'];
+export const POPULAR_ITEMS = ['t1', 'e1', 'e3', 't5', 'b1'];

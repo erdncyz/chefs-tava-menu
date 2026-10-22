@@ -1,12 +1,14 @@
 export enum Category {
   POPULAR = 'Popüler',
-  BURRITO = 'Burrito Çeşitleri',
+  TAVUK = 'Tavuk Menüleri',
   ET = 'Kırmızı Et',
-  TAVUK = 'Tavuk Tavalar',
-  CIGER = 'Ciğer Tava',
-  SALATA = 'Salata',
-  TATLI = 'Tatlılar',
-  ICECEK = 'İçecekler'
+  CIGER = 'Ciğer',
+  ASYA = 'Asya Tava',
+  WRAP = 'Wrap',
+  BURRITO = 'Burrito',
+  MENU = 'Menüler',
+  ICECEK = 'İçecekler',
+  ALTERNATIF = 'Alternatifler',
 }
 
 export interface MenuItem {

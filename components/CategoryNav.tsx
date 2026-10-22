@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Category } from '../types';
-import { Sparkles, Flame, Beef, Drumstick, Soup, Salad, Cake, CupSoda, LayoutGrid } from 'lucide-react';
+import { Sparkles, Flame, Beef, Drumstick, Soup, Salad, CupSoda, LayoutGrid, Sandwich, UtensilsCrossed } from 'lucide-react';
 
 interface CategoryNavProps {
   activeCategory: Category | 'ALL';
@@ -10,13 +10,15 @@ interface CategoryNavProps {
 const ICONS: Record<string, React.ReactNode> = {
   ALL: <LayoutGrid size={15} />,
   [Category.POPULAR]: <Sparkles size={15} />,
-  [Category.BURRITO]: <Flame size={15} />,
-  [Category.ET]: <Beef size={15} />,
   [Category.TAVUK]: <Drumstick size={15} />,
+  [Category.ET]: <Beef size={15} />,
   [Category.CIGER]: <Soup size={15} />,
-  [Category.SALATA]: <Salad size={15} />,
-  [Category.TATLI]: <Cake size={15} />,
+  [Category.ASYA]: <Flame size={15} />,
+  [Category.WRAP]: <Sandwich size={15} />,
+  [Category.BURRITO]: <Flame size={15} />,
+  [Category.MENU]: <UtensilsCrossed size={15} />,
   [Category.ICECEK]: <CupSoda size={15} />,
+  [Category.ALTERNATIF]: <Salad size={15} />,
 };
 
 const CategoryNav: React.FC<CategoryNavProps> = ({ activeCategory, onSelectCategory }) => {
